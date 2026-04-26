@@ -1,448 +1,1250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaira Hussain | Data Analyst & AI Enthusiast</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   ]<link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaira Hussain</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:   #0f0f0f;
+  --soft:  #444;
+  --faint: #777;
+  --rule:  rgba(0,0,0,0.14);
+  --paper: #f9f8f5;
+  --warm:  #ece8df;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+/* ── SPARKLE CURSOR ── */
+#cdot {
+  position: fixed;
+  width: 6px; height: 6px;
+  background: var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%,-50%);
+  transition: transform .1s;
+}
+#cring {
+  position: fixed;
+  width: 28px; height: 28px;
+  border: 1px solid rgba(15,15,15,0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%,-50%);
+  transition: width .3s cubic-bezier(.23,1,.32,1), height .3s, border-color .3s;
+}
+body.hl #cring { width: 44px; height: 44px; border-color: rgba(15,15,15,0.5); }
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9997;
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(1);
+  animation: sparkle-fade .6s ease-out forwards;
+}
+@keyframes sparkle-fade {
+  0%   { transform: translate(-50%,-50%) scale(1);   opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(0);   opacity: 0; }
+}
+.sparkle-star {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9997;
+  font-size: 12px;
+  transform: translate(-50%,-50%);
+  animation: star-float .8s ease-out forwards;
+  line-height: 1;
+}
+@keyframes star-float {
+  0%   { transform: translate(-50%,-50%) scale(1) rotate(0deg);   opacity: 1; }
+  100% { transform: translate(-50%,-180%) scale(0) rotate(180deg); opacity: 0; }
+}
+
+/* ── PROGRESS ── */
+#prog {
+  position: fixed;
+  top: 0; left: 0;
+  height: 1.5px;
+  background: var(--ink);
+  width: 0%;
+  z-index: 9000;
+  transition: width .05s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 8000;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+  text-decoration: none;
+  cursor: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── SHARED ── */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 48px; }
+
+section { border-bottom: 1px solid var(--rule); }
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0;
+}
+.sec-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.sec-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--soft);
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.serif em { font-style: italic; }
+
+.body-text {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.85;
+}
+
+.lnk {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+  cursor: none;
+  transition: opacity .2s;
+  display: inline-block;
+}
+.lnk:hover { opacity: .4; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 48px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 48px 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(72px, 12vw, 160px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+.hero-name .word {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.hero-name .word span {
+  display: inline-block;
+  transition: transform .5s cubic-bezier(.16,1,.3,1), color .5s;
+}
+.hero-name:hover .word span {
+  animation: letter-wave .6s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-name .word span:nth-child(1){animation-delay:.00s}
+.hero-name .word span:nth-child(2){animation-delay:.03s}
+.hero-name .word span:nth-child(3){animation-delay:.06s}
+.hero-name .word span:nth-child(4){animation-delay:.09s}
+.hero-name .word span:nth-child(5){animation-delay:.12s}
+.hero-name .word span:nth-child(6){animation-delay:.15s}
+.hero-name .word span:nth-child(7){animation-delay:.18s}
+.hero-name .word span:nth-child(8){animation-delay:.21s}
+@keyframes letter-wave {
+  0%   { transform: translateY(0) rotate(0deg); }
+  40%  { transform: translateY(-12px) rotate(-3deg); }
+  70%  { transform: translateY(4px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+/* Shadow layer behind name for depth */
+.hero-name::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 3px; top: 4px;
+  color: rgba(15,15,15,0.06);
+  z-index: -1;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  pointer-events: none;
+  white-space: pre;
+}
+.hero-name em { font-style: italic; }
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.hero-desc {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.9;
+}
+.hero-status {
+  text-align: right;
+}
+.hero-status-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: #4caf50;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.hero-status-text {
+  font-size: 11px;
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+/* ── ABOUT ── */
+#about { background: var(--warm); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 64px 0;
+}
+.about-h { font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; }
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.stat:first-child { border-top: 1px solid rgba(0,0,0,0.08); }
+.stat-n {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.stat-d { font-size: 11px; color: var(--soft); line-height: 1.5; text-align: right; }
+
+/* ── SKILLS ── */
+#skills { background: var(--paper); }
+.skills-inner { padding: 64px 0; }
+.skills-h { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 48px; }
+.skills-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.sg-title {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  display: block;
+}
+.sk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+  color: var(--ink);
+}
+.dots { display: flex; gap: 4px; }
+.d { width: 5px; height: 5px; border-radius: 50%; background: var(--rule); }
+.d.on { background: var(--ink); }
+
+/* ── PROJECTS ── */
+#projects { background: var(--paper); }
+.projects-inner { padding: 64px 0; }
+.proj-list { display: flex; flex-direction: column; }
+.proj-row {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 28px;
+  align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  cursor: none;
+  transition: background .2s;
+  border-radius: 4px;
+}
+.proj-row:hover { background: var(--warm); padding-left: 12px; padding-right: 12px; margin: 0 -12px; }
+.proj-idx {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--soft);
+  padding-top: 5px;
+}
+.proj-body {}
+.proj-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.proj-desc { font-size: 13px; color: var(--ink); line-height: 1.7; margin-bottom: 12px; }
+.proj-nums { display: flex; gap: 24px; }
+.pn-v {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+.pn-l { font-size: 9px; color: var(--soft); margin-top: 2px; }
+.proj-arr {
+  font-size: 18px;
+  color: var(--soft);
+  padding-top: 4px;
+  transition: transform .2s, color .2s;
+}
+.proj-row:hover .proj-arr { transform: translate(3px,-3px); color: var(--ink); }
+
+/* ── EXPERIENCE ── */
+#experience { background: var(--ink); border-bottom: none; }
+#experience .sec-label, #experience .sec-num { color: rgba(255,255,255,0.2); }
+.exp-inner { padding: 64px 0; }
+.exp-h { font-size: clamp(28px, 3.5vw, 42px); color: #fff; margin-bottom: 48px; }
+.exp-h em { font-style: italic; }
+.exp-items { display: flex; flex-direction: column; }
+.ei {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.ei:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+.ei-org { font-size: 12px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.ei-date { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.25); }
+.ei-role { font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 8px; font-weight: 500; }
+.ei-desc { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.75; }
+
+/* ── CERTS ── */
+#certs { background: var(--warm); }
+.certs-inner { padding: 64px 0; }
+.certs-h { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 40px; }
+.cert-list { display: flex; flex-direction: column; }
+.ci {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+.ci:last-child { border-bottom: 1px solid rgba(0,0,0,0.08); }
+.ci-left {}
+.ci-org { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft); margin-bottom: 5px; }
+.ci-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.ci-yr { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--soft); }
+
+/* ── CONTACT ── */
+#contact { background: var(--paper); border-bottom: none; }
+.contact-inner {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+.ct-tag { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--soft); }
+.ct-h {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 110px);
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+}
+.ct-h em { font-style: italic; }
+.ct-email {
+  font-size: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  cursor: none;
+  transition: opacity .2s;
+}
+.ct-email:hover { opacity: .4; }
+.ct-links { display: flex; gap: 28px; }
+.footer-copy {
+  font-size: 9px;
+  color: var(--soft);
+  letter-spacing: 0.08em;
+  padding-bottom: 40px;
+}
+
+/* ── FADE IN ── */
+.fi {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.fi.show { opacity: 1; transform: none; }
+
+@media (max-width: 700px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .wrap { padding: 0 24px; }
+  .hero-inner { padding: 48px 24px 40px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .skills-cols { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .proj-row { grid-template-columns: 32px 1fr 20px; gap: 16px; }
+  .ei { grid-template-columns: 1fr; gap: 8px; }
+  .ci { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+
+/* hero name */
+#hero-name { opacity: 0; transition: opacity .1s; }
+
+/* draw-in rule line on section headers */
+.draw-section {
+  position: relative;
+  overflow: hidden;
+}
+.draw-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 1px;
+  width: 0%;
+  background: var(--ink);
+  transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.draw-section.drawn::after { width: 100%; }
+
+/* count-up — smooth fade in when section visible */
+.stat-n {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+/* project rows — slide in staggered */
+.proj-row {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease, background 0.2s, padding 0.2s;
+}
+.proj-row.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* skill rows draw in */
+.sk {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.sk.show {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* Verbalystic — featured project highlight */
+.proj-row:first-child {
+  border-left: 2px solid var(--ink);
+  padding-left: calc(48px - 2px);
+}
+.proj-row:first-child .proj-title {
+  font-size: 24px;
+}
+
+
+/* ── PROJECT HOVER REVEAL ── */
+.proj-row {
+  position: relative;
+  overflow: visible;
+}
+.proj-hover-card {
+  display: none;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%) scale(0.94);
+  width: min(520px, 90vw);
+  background: var(--ink);
+  color: #fff;
+  padding: 36px 36px 32px;
+  z-index: 500;
+  opacity: 0;
+  transition: opacity .25s ease, transform .3s cubic-bezier(.16,1,.3,1);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+  pointer-events: none;
+}
+.proj-row:hover .proj-hover-card {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+.phc-tag {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 14px;
+}
+.phc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.phc-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.phc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.phc-tag-item {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.5);
+}
+.phc-nums {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.phc-nv {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+.phc-nl {
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 3px;
+}
+.phc-links {
+  display: flex;
+  gap: 14px;
+}
+.phc-link {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 1px;
+  transition: border-color .2s;
+}
+.phc-link:hover { border-color: #fff; }
+
+/* make project row minimal — hide nums and tags by default */
+.proj-row .proj-nums { display: none; }
+.proj-row .proj-desc { 
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .3s, opacity .3s;
+  margin-bottom: 0;
+}
+
+</style>
 </head>
 <body>
-    <!-- Professional Loading Screen -->
-    <div class="loader">
-        <div class="loader-content">
-            <h1 class="loader-name">ZAIRA HUSSAIN</h1>
-            <p class="loader-subtitle">Data Analyst</p>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-        </div>
+
+<div id="cdot"></div>
+<div id="cring"></div>
+<div id="prog"></div>
+
+<nav>
+  <span class="nav-logo">Zaira Hussain</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-name" id="hero-name"><span id="scramble-1">Zaira</span><br><em id="scramble-2">Hussain</em></h1>
+    <div class="hero-meta fi">
+      <p class="hero-desc">
+        Data Analyst · AI Builder · Indore, India<br>
+        Python · SQL · Power BI · ML · GenAI<br>
+        B.Tech CSE · CGPA 8.04 · <a href="https://verbalystic-nu.vercel.app/" target="_blank" style="color:var(--ink);border-bottom:1px solid var(--ink);text-decoration:none;">Live App ↗</a>
+      </p>
+      <div class="hero-status">
+        <span class="hero-status-dot"></span>
+        <span class="hero-status-text">Open to roles</span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Animated Particles Background -->
-    <canvas id="particles-canvas"></canvas>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head draw-section">
+      <span class="sec-label">About</span>
+      <span class="sec-num">01</span>
+    </div>
+    <div class="about-grid">
+      <div class="fi">
+        <h2 class="serif about-h">Numbers tell stories.<br>I find <em>the right ones.</em></h2>
+        <p class="body-text">Third-year B.Tech CSE student specialising in data analytics and AI-driven systems. I build things that surface what data is hiding — fraud patterns, churn risk, business intelligence.</p>
+        <p class="body-text" style="margin-top:12px; font-size:11px; color:var(--soft);">Indore Institute of Science and Technology · Graduating May 2027</p>
+      </div>
+      <div class="about-stats fi">
+        <div class="stat"><span class="stat-n" data-count="284" data-suffix="K+">0</span><span class="stat-d">Records processed<br>in one project</span></div>
+        <div class="stat"><span class="stat-n" data-count="92" data-suffix="%">0</span><span class="stat-d">ML model<br>detection accuracy</span></div>
+        <div class="stat"><span class="stat-n" data-count="6" data-suffix="">0</span><span class="stat-d">Projects shipped<br>1 live deployed app</span></div>
+        <div class="stat"><span class="stat-n" data-count="8.04" data-suffix="" data-decimal="true">0</span><span class="stat-d">CGPA · B.Tech<br>Computer Science</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Background Gradient -->
-    <div class="bg-gradient"></div>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Navigation Bar -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="logo">ZH.</a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head draw-section">
+      <span class="sec-label">Skills</span>
+      <span class="sec-num">02</span>
+    </div>
+    <div class="skills-inner fi">
+      <h2 class="serif skills-h">What I work <em>with.</em></h2>
+      <div class="skills-cols">
+        <div>
+          <span class="sg-title">Languages &amp; Data</span>
+          <div class="sk"><span>Python</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+          <div class="sk"><span>SQL / MySQL</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+          <div class="sk"><span>Pandas / NumPy</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Scikit-learn</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">🚀 Data Analyst Portfolio</span>
-                <h1>Building <span class="typing">Data-Driven Insights & Dashboards</span></h1>
-                <p class="hero-text">
-                    Third-year CSE student focused on data analytics and machine learning.
-                    <br>Currently seeking Data Analyst Internship opportunities.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#resume" class="btn btn-secondary">Download Resume</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/zairahussain27" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/zairahussain/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:zairahussain27@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
+        <div>
+          <span class="sg-title">Visualisation</span>
+          <div class="sk"><span>Power BI</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div></div></div>
+          <div class="sk"><span>DAX</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Power Query</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Excel</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge">About Me</span>
-                <h2>Driven by Ambition, Powered by Code</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a third-year Computer Science student focused on data analytics, machine learning, and real-world problem solving.
-                    </p>
-                    <p>
-                        I work with Python, SQL, Excel, and Power BI to analyze datasets, build dashboards, and develop predictive models.    
-                    </p>
-                    <p>
-                        I've built multiple data-driven projects including analytics dashboards, machine learning models, and business-focused data solutions.
-                    </p>
-                    <p>
-                        Currently seeking a Data Analyst Internship where I can apply my skills, gain real-world experience, and contribute to meaningful projects.
-                    </p>
-                    <div class="highlight-box">
-                        <strong>Mission:</strong> To build data-driven solutions using Python, SQL, and visualization tools that deliver clear insights and real business value.
-                    </div>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Tools & Technologies</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">8.0+</div>
-                        <div class="stat-label">CGPA</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Virtual Internship</div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <span class="sg-title">AI / Generative</span>
+          <div class="sk"><span>LLM APIs</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Prompt Engineering</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Hugging Face</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div><div class="d"></div></div></div>
+          <div class="sk"><span>Git / GitHub</span><div class="dots"><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d on"></div><div class="d"></div></div></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge">Technical Arsenal</span>
-                <h2>Skills & Expertise</h2>
-                <p class="section-desc">
-                    A comprehensive toolkit built through hands-on projects, rigorous learning, and real-world application
-                </p>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head draw-section">
+      <span class="sec-label">Projects</span>
+      <span class="sec-num">03</span>
+    </div>
+    <div class="projects-inner">
+      <div class="proj-list">
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/Verbalystic" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">Full Stack · AI · Live App</p>
+        <h3 class="phc-title">Verbalystic — AI Public Speaking Coach</h3>
+        <p class="phc-desc">A web app that analyses your speech in real-time using AI — scoring fluency, pronunciation, and confidence. Built with React frontend, Python backend, deployed on Vercel with 6 production deployments.</p>
+        <div class="phc-tags"><span class="phc-tag-item">React</span><span class="phc-tag-item">Python</span><span class="phc-tag-item">AI Speech API</span><span class="phc-tag-item">Vercel</span><span class="phc-tag-item">Full Stack</span></div>
+        <div class="phc-nums"><div><div class="phc-nv">Live</div><div class="phc-nl">Deployed App</div></div><div><div class="phc-nv">64+</div><div class="phc-nl">Commits</div></div><div><div class="phc-nv">6</div><div class="phc-nl">Deployments</div></div></div>
+        <div class="phc-links"><a class="phc-link" href="https://verbalystic-nu.vercel.app/" target="_blank">Live Demo ↗</a><a class="phc-link" href="https://github.com/zairahussain27/Verbalystic" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">01</span>
+          <div class="proj-body">
+            <div class="proj-title">Verbalystic — AI Public Speaking Coach
+              <span style="display:inline-block;margin-left:10px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:2px 8px;border-radius:2px;font-family:'DM Sans',sans-serif;vertical-align:middle;">Live ↗</span>
             </div>
-            <div class="skills-wrapper">
-                <div class="skills-track">
-                    <!-- First Set -->
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-python"></i></div>
-                        <div class="skill-name">Python</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <div class="skill-name">SQL</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="skill-name">Data Analysis</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
-                        <div class="skill-name">Excel</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                        <div class="skill-name">Power BI</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 82%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-github"></i></div>
-                        <div class="skill-name">GitHub</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 87%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                        <div class="skill-name">AI Tools</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 83%"></div>
-                        </div>
-                    </div>
-                    <!-- Duplicate for Seamless Loop -->
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-python"></i></div>
-                        <div class="skill-name">Python</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <div class="skill-name">SQL</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="skill-name">Data Analysis</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
-                        <div class="skill-name">Excel</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
-                        <div class="skill-name">Power BI</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 82%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                        <div class="skill-name">Machine Learning</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fab fa-github"></i></div>
-                        <div class="skill-name">GitHub</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 87%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                        <div class="skill-name">AI Tools</div>
-                        <div class="skill-bar">
-                            <div class="skill-fill" style="width: 83%"></div>
-                        </div>
-                    </div>
-                </div>
+            <p class="proj-desc">Full-stack AI web app that analyses speech in real-time for fluency, pronunciation, and confidence. Structured feedback to improve public speaking — deployed on Vercel with 64+ commits.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
+              <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--rule);color:var(--soft);">React</span>
+              <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--rule);color:var(--soft);">Python</span>
+              <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--rule);color:var(--soft);">AI Speech API</span>
+              <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--rule);color:var(--soft);">Vercel</span>
+              <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--rule);color:var(--soft);">Full Stack</span>
             </div>
+            <div class="proj-nums">
+              <div><div class="pn-v">Live</div><div class="pn-l">Deployed App</div></div>
+              <div><div class="pn-v">64+</div><div class="pn-l">Commits</div></div>
+              <div><div class="pn-v">6</div><div class="pn-l">Deployments</div></div>
+            </div>
+            <div style="display:flex;gap:16px;margin-top:4px">
+              <a class="lnk" href="https://verbalystic-nu.vercel.app/" target="_blank" style="font-size:10px">Live Demo ↗</a>
+              <a class="lnk" href="https://github.com/zairahussain27/Verbalystic" target="_blank" style="font-size:10px">GitHub ↗</a>
+            </div>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/AI-Fraud-Detection-Risk-Intelligence-System" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">ML · Data Analytics · Power BI</p>
+        <h3 class="phc-title">AI Fraud Detection & Risk Intelligence</h3>
+        <p class="phc-desc">284K+ financial transactions analysed using a machine learning pipeline. Engineered 10+ features, stratified risk into tiers, and deployed a live Power BI dashboard with 12+ visuals.</p>
+        <div class="phc-tags"><span class="phc-tag-item">Python</span><span class="phc-tag-item">Scikit-learn</span><span class="phc-tag-item">SQL</span><span class="phc-tag-item">Power BI</span><span class="phc-tag-item">ML Pipeline</span></div>
+        <div class="phc-nums"><div><div class="phc-nv">284K</div><div class="phc-nl">Transactions</div></div><div><div class="phc-nv">92%</div><div class="phc-nl">Accuracy</div></div><div><div class="phc-nv">12+</div><div class="phc-nl">BI Visuals</div></div></div>
+        <div class="phc-links"><a class="phc-link" href="https://github.com/zairahussain27/AI-Fraud-Detection-Risk-Intelligence-System" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">02</span>
+          <div class="proj-body">
+            <div class="proj-title">AI Fraud Detection &amp; Risk Intelligence</div>
+            <p class="proj-desc">284K+ transactions analysed. ML pipeline with 92% accuracy. Automated risk-scoring into tiers. Live Power BI dashboard.</p>
+            <div class="proj-nums">
+              <div><div class="pn-v">284K</div><div class="pn-l">Transactions</div></div>
+              <div><div class="pn-v">92%</div><div class="pn-l">Accuracy</div></div>
+              <div><div class="pn-v">12+</div><div class="pn-l">BI Visuals</div></div>
+            </div>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/Customer-Churn-Prediction-Retention-Insights" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">SQL · ML · Business Intelligence</p>
+        <h3 class="phc-title">Customer Churn Prediction</h3>
+        <p class="phc-desc">7,000+ telecom customer records cleaned and modelled. Identified churn drivers across 4 behavioural dimensions. Flagged 35% of the base as high-risk — delivered retention strategy via Power BI dashboard.</p>
+        <div class="phc-tags"><span class="phc-tag-item">SQL</span><span class="phc-tag-item">Python</span><span class="phc-tag-item">Power BI</span><span class="phc-tag-item">EDA</span><span class="phc-tag-item">Machine Learning</span></div>
+        <div class="phc-nums"><div><div class="phc-nv">7K+</div><div class="phc-nl">Records</div></div><div><div class="phc-nv">35%</div><div class="phc-nl">Risk Flagged</div></div><div><div class="phc-nv">5+</div><div class="phc-nl">Churn Metrics</div></div></div>
+        <div class="phc-links"><a class="phc-link" href="https://github.com/zairahussain27/Customer-Churn-Prediction-Retention-Insights" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">03</span>
+          <div class="proj-body">
+            <div class="proj-title">Customer Churn Prediction</div>
+            <p class="proj-desc">7K+ telecom records cleaned and modelled. 35% of customer base flagged high-attrition. Retention strategy via Power BI.</p>
+            <div class="proj-nums">
+              <div><div class="pn-v">7K+</div><div class="pn-l">Records</div></div>
+              <div><div class="pn-v">35%</div><div class="pn-l">Risk Flagged</div></div>
+            </div>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/reglens-ai" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">Generative AI · LLM · Python</p>
+        <h3 class="phc-title">reglens-ai — Regulatory Compliance Assistant</h3>
+        <p class="phc-desc">AI-powered compliance assistant for FinTechs and MSMEs. Built on OpenAI and Anthropic APIs with multi-step prompt engineering pipelines using few-shot and chain-of-thought reasoning.</p>
+        <div class="phc-tags"><span class="phc-tag-item">Generative AI</span><span class="phc-tag-item">OpenAI API</span><span class="phc-tag-item">Anthropic</span><span class="phc-tag-item">Prompt Eng.</span><span class="phc-tag-item">Python</span></div>
+        <div class="phc-nums"><div><div class="phc-nv">10+</div><div class="phc-nl">Prompt Flows</div></div><div><div class="phc-nv">2</div><div class="phc-nl">LLM APIs</div></div></div>
+        <div class="phc-links"><a class="phc-link" href="https://github.com/zairahussain27/reglens-ai" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">04</span>
+          <div class="proj-body">
+            <div class="proj-title">reglens-ai</div>
+            <p class="proj-desc">AI compliance assistant for FinTechs and MSMEs. OpenAI / Anthropic APIs with few-shot and chain-of-thought prompt pipelines.</p>
+            <div class="proj-nums">
+              <div><div class="pn-v">10+</div><div class="pn-l">Prompt Flows</div></div>
+            </div>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/Business-Sales-Intelligence-Dashboard" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">Power BI · DAX · Business Intelligence</p>
+        <h3 class="phc-title">Sales Intelligence Dashboard</h3>
+        <p class="phc-desc">Enterprise BI dashboard tracking Revenue, Profit, Region Performance and Category KPIs. Full data cleaning via Power Query with interactive DAX measures and drill-through visuals.</p>
+        <div class="phc-tags"><span class="phc-tag-item">Power BI</span><span class="phc-tag-item">DAX</span><span class="phc-tag-item">Power Query</span><span class="phc-tag-item">MySQL</span><span class="phc-tag-item">KPIs</span></div>
+        
+        <div class="phc-links"><a class="phc-link" href="https://github.com/zairahussain27/Business-Sales-Intelligence-Dashboard" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">05</span>
+          <div class="proj-body">
+            <div class="proj-title">Sales Intelligence Dashboard</div>
+            <p class="proj-desc">Enterprise BI tracking Revenue, Profit, Region and Category KPIs. Power Query pipeline with interactive DAX measures.</p>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+        <a class="proj-row fi" href="https://github.com/zairahussain27/UPI-Transaction-Analytics-System" target="_blank">
+      <div class="proj-hover-card">
+        <p class="phc-tag">Power BI · Analytics · DAX</p>
+        <h3 class="phc-title">UPI Transaction Analytics</h3>
+        <p class="phc-desc">Power BI dashboard tracking monthly UPI volume, transaction value, success/failure rates and app-wise performance. Complete data cleaning pipeline built in Power Query with custom DAX KPIs.</p>
+        <div class="phc-tags"><span class="phc-tag-item">Power BI</span><span class="phc-tag-item">DAX</span><span class="phc-tag-item">Data Cleaning</span><span class="phc-tag-item">KPI Design</span></div>
+        
+        <div class="phc-links"><a class="phc-link" href="https://github.com/zairahussain27/UPI-Transaction-Analytics-System" target="_blank">GitHub ↗</a></div>
+      </div>
+          <span class="proj-idx">06</span>
+          <div class="proj-body">
+            <div class="proj-title">UPI Transaction Analytics</div>
+            <p class="proj-desc">Monthly UPI volume, value, success rates and app performance tracked in Power BI. Full Power Query cleaning pipeline.</p>
+          </div>
+          <span class="proj-arr">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head draw-section" style="border-color:rgba(255,255,255,0.07)">
+      <span class="sec-label">Experience</span>
+      <span class="sec-num">04</span>
+    </div>
+    <div class="exp-inner fi">
+      <h2 class="serif exp-h">Work &amp; <em>Experience.</em></h2>
+      <div class="exp-items">
+        <div class="ei">
+          <div>
+            <div class="ei-org">BCG X · Forage</div>
+            <div class="ei-date">Nov 2025</div>
+          </div>
+          <div>
+            <div class="ei-role">GenAI Job Simulation</div>
+            <p class="ei-desc">Built AI financial chatbot using OpenAI / Anthropic APIs. Designed 10+ prompt workflows with few-shot and chain-of-thought reasoning. Mined 3+ datasets for AI decision-making pipelines.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge">Featured Work</span>
-                <h2>Projects That Demonstrate Excellence</h2>
-                <p class="section-desc">
-                    Real-world applications showcasing technical expertise, problem-solving abilities, and innovative thinking
-                </p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <span class="project-num">01</span>
-                    <h3 class="project-title">RegLens AI – Regulatory Compliance Assistant</h3>
-                    <p class="project-desc">
-                        Developed an AI-powered system that helps FinTechs and MSMEs interpret complex government regulations (RBI, SEBI, GST). Implemented a RAG pipeline to retrieve relevant legal documents and generate explainable compliance insights with risk assessment.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">RAG</span>
-                        <span class="tag">LLM(Claude API)</span>
-                        <span class="tag">ChromaDB</span>
-                        <span class="tag">Streamlit</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/zairahussain27/reglens-ai" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <span class="project-num">02</span>
-                    <h3 class="project-title">AI Public Speaking Coach (Verbalystic)</h3>
-                    <p class="project-desc">
-                        Built a web-based AI application that analyzes user speech in real-time and provides feedback on fluency, pronunciation, and confidence. Integrated speech processing and AI models to deliver structured improvement insights for public speaking skills.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Speech Processing</span>
-                        <span class="tag">NLP</span>
-                        <span class="tag">Flask/FastAPI</span>
-                        <span class="tag">HTML</span>
-                        <span class="tag">React.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/TaniyaNagar/Verbalystic" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                   
-                        <a href="https://verbalystic-gamma.vercel.app/" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <span class="project-num">03</span>
-                    <h3 class="project-title"> AI Fraud Detection & Risk Intelligence System</h3>
-                    <p class="project-desc">
-                        Built an end-to-end AI fraud detection system to identify high-risk transactions using machine learning and interactive risk dashboards. 
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Power BI</span>
-                        <span class="tag">Excel</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/zairahussain27/AI-Fraud-Detection-Risk-Intelligence-System" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <span class="project-num">04</span>
-                    <h3 class="project-title">Customer Churn Prediction System</h3>
-                    <p class="project-desc">
-                        Analyzed customer behavior data to identify churn patterns and built a machine learning model to predict high-risk customers. Performed data cleaning, EDA, and visualization using Python and SQL.    
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Power BI</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/zairahussain27/customer-churn-analysis" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-num">05</span>
-                    <h3 class="project-title">Sales Performance Analytics Dashboard</h3>
-                    <p class="project-desc">
-                        Built an interactive Power BI dashboard to track revenue, profit, and regional sales performance. Cleaned and transformed data using Power Query and created DAX measures for business insights.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">SQL</span>
-                        <span class="tag">Power BI</span>
-                        <span class="tag">Excel</span>
-                        <span class="tag">DAX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/zairahussain27/sales-dashboard-powerbi" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <span class="project-num">06</span>
-                    <h3 class="project-title">UPI Transaction Data Analysis Dashboard</h3>
-                    <p class="project-desc">
-                        Developed a Power BI dashboard analyzing UPI transaction volume, value, success rate, and app-wise performance. Performed data cleaning and created KPIs for transaction insights.    
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Power BI</span>
-                        <span class="tag">Excel</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">DAX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/zairahussain27/UPI-Transaction-Dashboard" target="_blank" class="project-btn">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
+        <div class="ei">
+          <div>
+            <div class="ei-org">Tata · Forage</div>
+            <div class="ei-date">Jun – Jul 2025</div>
+          </div>
+          <div>
+            <div class="ei-role">GenAI Data Analytics Simulation</div>
+            <p class="ei-desc">Audited 5+ enterprise datasets surfacing performance trends. Rectified 10,000+ data pipeline entries. Delivered 4-section BI report for executive decision-making.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Resume Section -->
-    <section id="resume">
-        <div class="container">
-            <div class="resume-box">
-                <div class="resume-icon">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-                <h2>My Resume</h2>
-                <p class="section-desc" style="margin: 1.5rem auto 2.5rem;">
-                    Detailed overview of my education, technical skills, projects, achievements, and career objectives. Download to learn more about my qualifications and aspirations.
-                </p>
-                <a href="Resume_DA.pdf" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.1rem;">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-                <p style="margin-top: 2rem; color: var(--text-secondary);">
-                    Looking for a dedicated, skilled developer ready to make an immediate impact
-                </p>
+<!-- CERTS -->
+<section id="certs">
+  <div class="wrap">
+    <div class="sec-head draw-section">
+      <span class="sec-label">Certifications</span>
+      <span class="sec-num">05</span>
+    </div>
+    <div class="certs-inner fi">
+      <h2 class="serif certs-h">Credentials &amp; <em>Certificates.</em></h2>
+      <p style="font-size:12px;color:var(--soft);margin-bottom:32px;">7 verified credentials across IBM, AWS, Cisco, Google, Udemy</p>
+      <div class="cert-list">
+
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">IBM · Coursera · Credly</div>
+            <div class="ci-name">Python for Data Science, AI &amp; Development</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Apr 2026</span>
+            <div style="display:flex;gap:12px">
+              <a class="lnk" href="https://coursera.org/verify/CIRSXSD5OGC7" target="_blank">Coursera ↗</a>
+              <a class="lnk" href="https://credly.com/earner/earned/badge/a57b675d-f083-42bc-97f8-f373076ca228" target="_blank">Credly ↗</a>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge">Get In Touch</span>
-                <h2>Let's Connect</h2>
-                <p class="section-desc">
-                    Available for internships, collaborations, and tech opportunities
-                </p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">
-                        <a href="mailto:zairahussain27@gmail.com">zairahussain27@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value">
-                        <a href="https://www.linkedin.com/in/zairahussain/" target="_blank">linkedin.com/in/zairahussain</a>
-                    </div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-github"></i></div>
-                    <div class="contact-label">GitHub</div>
-                    <div class="contact-value">
-                        <a href="https://github.com/zairahussain27" target="_blank">github.com/zairahussain27</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-box">
-                <strong>Open to internships, collaborations, and impactful tech opportunities.</strong><br>
-                Let's build something extraordinary together.
-            </div>
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">AWS Academy · Amazon Web Services</div>
+            <div class="ci-name">Cloud Foundations — Trained Badge</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">2026</span>
+            <a class="lnk" href="https://www.credly.com/go/mSx6ePXGjnu2ijVfZU5Otw" target="_blank">Credly ↗</a>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Zaira Hussain. Designed & Developed with Precision.</p>
-    </footer>
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">Cisco Networking Academy · IIST</div>
+            <div class="ci-name">Introduction to Data Science</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Apr 25, 2026 · 6 hrs</span>
+            <a class="lnk" href="https://netacad.com/certificates/?issuanceId=6e97ae9f-5cb4-4a0b-bef8-150fe6fcdf31" target="_blank">Certificate ↗</a>
+          </div>
+        </div>
 
-    <!-- JavaScript -->
-    <script src="scripts.js"></script>
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">Cisco Networking Academy · IIST</div>
+            <div class="ci-name">Apply AI: Analyze Customer Reviews</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Apr 24, 2026 · 6 hrs</span>
+            <a class="lnk" href="https://netacad.com/certificates/?issuanceId=a453f899-5829-4727-8310-4765c1b3268e" target="_blank">Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">Cisco Networking Academy · IIST</div>
+            <div class="ci-name">Python Essentials 2</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Apr 23, 2026 · 40 hrs</span>
+            <a class="lnk" href="https://netacad.com/certificates/?issuanceId=6cc34ae5-f5f4-4680-b612-22fd06e6e64d" target="_blank">Certificate ↗</a>
+          </div>
+        </div>
+
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">Udemy</div>
+            <div class="ci-name">Complete Data Analyst Bootcamp — Basics to Advanced</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Mar 2026 · 89 hrs</span>
+            <a class="lnk" href="https://ude.my/UC-2f0dbf98-19fa-408a-a402-d2edad8c1524" target="_blank">Verify ↗</a>
+          </div>
+        </div>
+
+        <div class="ci">
+          <div class="ci-left">
+            <div class="ci-org">Google · Coursera</div>
+            <div class="ci-name">Process Data from Dirty to Clean</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:10px">
+            <span class="ci-yr" style="color:var(--soft)">Dec 2025</span>
+            <a class="lnk" href="https://coursera.org/verify/3LB3I8ZKNPBB" target="_blank">Verify ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner fi">
+      <p class="ct-tag">Get in touch</p>
+      <h2 class="ct-h">Let's work<br><em>together.</em></h2>
+      <a class="ct-email" href="mailto:zairahussain27@gmail.com">zairahussain27@gmail.com</a>
+      <div class="ct-links">
+        <a class="lnk" href="https://linkedin.com/in/zairahussain" target="_blank">LinkedIn ↗</a>
+        <a class="lnk" href="https://github.com/zairahussain27" target="_blank">GitHub ↗</a>
+        <a class="lnk" href="https://zaira-hussain.netlify.app/" target="_blank">Portfolio ↗</a>
+      </div>
+    </div>
+    <p class="footer-copy" style="text-align:center">© 2026 Zaira Hussain · Indore, India</p>
+  </div>
+</section>
+
+<script>
+  const dot  = document.getElementById('cdot');
+  const ring = document.getElementById('cring');
+  const prog = document.getElementById('prog');
+
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  window.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+    spawnSparkle(mx, my);
+  });
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('hl'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('hl'));
+  });
+
+  // progress bar on scroll
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (window.scrollY / h * 100).toFixed(2) + '%';
+  });
+
+  // scroll-triggered fade in
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((en, i) => {
+      if (en.isIntersecting) {
+        setTimeout(() => en.target.classList.add('show'), i * 60);
+        obs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+  // RAF — trailing ring
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function loop() {
+    rx = lerp(rx, mx, 0.13);
+    ry = lerp(ry, my, 0.13);
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+
+/* ════════════════════════════════
+   ANIMATIONS
+════════════════════════════════ */
+
+// ── 1. NAME SCRAMBLE ──
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+function scramble(el, finalText, delay = 0) {
+  let frame = 0;
+  const totalFrames = 28;
+  const revealAt  = (i) => Math.floor((i / finalText.length) * totalFrames * 0.7);
+
+  setTimeout(() => {
+    const tick = () => {
+      let out = '';
+      for (let i = 0; i < finalText.length; i++) {
+        if (finalText[i] === ' ') { out += ' '; continue; }
+        if (frame >= revealAt(i)) {
+          out += finalText[i];
+        } else {
+          out += chars[Math.floor(Math.random() * chars.length)];
+        }
+      }
+      el.textContent = out;
+      frame++;
+      if (frame <= totalFrames) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = finalText;
+      }
+    };
+    requestAnimationFrame(tick);
+  }, delay);
+}
+
+window.addEventListener('load', () => {
+  // Animate each letter span in hero name
+  const nameEl = document.getElementById('hero-name');
+  if (!nameEl) return;
+  nameEl.style.opacity = '1';
+
+  const letters = nameEl.querySelectorAll('span span, em span');
+  letters.forEach((el, i) => {
+    const final = el.textContent;
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let frame = 0;
+    const total = 18;
+    setTimeout(() => {
+      const tick = () => {
+        if (frame < total * 0.6) {
+          el.textContent = chars[Math.floor(Math.random() * chars.length)];
+        } else {
+          el.textContent = final;
+          return;
+        }
+        frame++;
+        requestAnimationFrame(tick);
+      };
+      tick();
+    }, 80 + i * 55);
+  });
+});
+
+// ── 2. DRAW SECTION LINES ──
+const lineObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add('drawn');
+      lineObs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.draw-section').forEach(el => lineObs.observe(el));
+
+// ── 3. COUNT-UP NUMBERS ──
+function countUp(el) {
+  const target   = parseFloat(el.dataset.count);
+  const suffix   = el.dataset.suffix || '';
+  const isDecimal = el.dataset.decimal === 'true';
+  const duration = 1400;
+  const start    = performance.now();
+
+  const ease = t => 1 - Math.pow(1 - t, 4); // ease out quart
+
+  const step = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = ease(progress);
+    const current = target * eased;
+
+    el.textContent = (isDecimal
+      ? current.toFixed(2)
+      : target >= 100
+        ? Math.floor(current) + (progress >= 1 ? '' : '')
+        : Math.floor(current)
+    ) + suffix;
+
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = (isDecimal ? target.toFixed(2) : target) + suffix;
+  };
+
+  requestAnimationFrame(step);
+}
+
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting && en.target.dataset.count) {
+      countUp(en.target);
+      countObs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+// ── 4. STAGGERED SKILL ROWS ──
+const skillObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const siblings = en.target.parentElement.querySelectorAll('.sk');
+      siblings.forEach((sk, i) => {
+        setTimeout(() => sk.classList.add('show'), i * 60);
+      });
+      skillObs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.sk:first-of-type, .sg-title').forEach(el => {
+  const parent = el.closest('.skills-cols > div');
+  if (parent) skillObs.observe(parent);
+});
+
+// ── 5. STAGGERED PROJECT ROWS ──
+const projObs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const all = document.querySelectorAll('.proj-row');
+      all.forEach((row, i) => {
+        setTimeout(() => row.classList.add('show'), i * 90);
+      });
+      projObs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+const firstProj = document.querySelector('.proj-row');
+if (firstProj) projObs.observe(firstProj);
+
+</script>
 </body>
 </html>
