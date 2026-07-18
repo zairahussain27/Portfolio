@@ -2,7 +2,7 @@
 
 Welcome to my AI Engineering Portfolio!
 
-This repository showcases my work in **Generative AI, Large Language Models (LLMs), Machine Learning, and Full-Stack AI Development**. The projects featured here are built to solve real-world problems using modern AI technologies, intelligent automation, and production-ready software engineering practices.
+This repository showcases my work in **Generative AI, Large Language Models (LLMs), Machine Learning, and Full-Stack AI Development**. The projects featured here are built to solve real-world problems using modern AI technologies, intelligent automation, and production-ready software engineering practices
 
 From LLM-powered applications and machine learning systems to AI-driven analytics and full-stack deployments, this portfolio reflects my passion for building intelligent products with real-world impact.
 
