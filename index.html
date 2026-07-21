@@ -1,985 +1,806 @@
 <!DOCTYPE html>
-
-<html class="dark scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Zaira Hussain - AI Engineer Portfolio</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Configuration (Provided) -->
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-error": "#690005",
-                      "on-surface": "#e5e2e1",
-                      "error": "#ffb4ab",
-                      "on-secondary-fixed": "#001f25",
-                      "surface-container-low": "#1c1b1b",
-                      "surface-bright": "#3a3939",
-                      "primary-fixed-dim": "#adc6ff",
-                      "surface-container-highest": "#353534",
-                      "error-container": "#93000a",
-                      "on-secondary": "#00363e",
-                      "inverse-on-surface": "#313030",
-                      "primary-container": "#4d8eff",
-                      "on-tertiary": "#490080",
-                      "on-background": "#e5e2e1",
-                      "background": "#131313",
-                      "primary": "#adc6ff",
-                      "surface-container-lowest": "#0e0e0e",
-                      "surface-dim": "#131313",
-                      "on-error-container": "#ffdad6",
-                      "surface-container-high": "#2a2a2a",
-                      "on-surface-variant": "#c2c6d6",
-                      "on-primary": "#002e6a",
-                      "on-primary-fixed": "#001a42",
-                      "inverse-primary": "#005ac2",
-                      "tertiary-fixed-dim": "#ddb7ff",
-                      "on-tertiary-fixed-variant": "#6900b3",
-                      "tertiary-container": "#b76dff",
-                      "secondary": "#5de6ff",
-                      "outline": "#8c909f",
-                      "secondary-fixed-dim": "#2fd9f4",
-                      "surface-tint": "#adc6ff",
-                      "primary-fixed": "#d8e2ff",
-                      "on-tertiary-container": "#400071",
-                      "on-secondary-fixed-variant": "#004e5a",
-                      "on-primary-fixed-variant": "#004395",
-                      "on-tertiary-fixed": "#2c0051",
-                      "on-primary-container": "#00285d",
-                      "tertiary-fixed": "#f0dbff",
-                      "surface-variant": "#353534",
-                      "surface-container": "#201f1f",
-                      "secondary-fixed": "#a2eeff",
-                      "on-secondary-container": "#00515d",
-                      "tertiary": "#ddb7ff",
-                      "surface": "#131313",
-                      "inverse-surface": "#e5e2e1",
-                      "secondary-container": "#00cbe6",
-                      "outline-variant": "#424754",
-                      "base": "#050505",
-                      "surface-card": "#111111",
-                      "accent": "#3B82F6",
-                      "accent-purple": "#A855F7"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "unit": "4px",
-                      "container-max": "1200px",
-                      "section-gap": "96px",
-                      "stack-lg": "48px",
-                      "stack-sm": "12px",
-                      "stack-md": "24px",
-                      "margin-mobile": "20px",
-                      "gutter": "24px"
-              },
-              "fontFamily": {
-                      "display": [
-                              "Geist"
-                      ],
-                      "headline-lg": [
-                              "Geist"
-                      ],
-                      "label-mono": [
-                              "JetBrains Mono"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "caption": [
-                              "Inter"
-                      ],
-                      "headline-md": [
-                              "Geist"
-                      ],
-                      "headline-lg-mobile": [
-                              "Geist"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ]
-              },
-              "fontSize": {
-                      "display": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.04em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-lg": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.03em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "label-mono": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "0.02em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "letterSpacing": "0",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "caption": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
-        }
-    </script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaira Hussain — Generative AI Developer</title>
+<meta name="description" content="Zaira Hussain — Generative AI developer building LLM products with OpenAI and Anthropic APIs.">
 <style>
-        body {
-            background-color: #050505;
-            color: #e5e2e1;
-            cursor: none;
-            overflow-x: hidden;
-        }
+  :root{
+    --white:#ffffff;
+    --grey-50:#fbfbfd;
+    --grey-100:#f5f5f7;
+    --grey-150:#eeeef1;
+    --grey-200:#e8e8ed;
+    --grey-300:#d2d2d7;
+    --grey-400:#aeaeb2;
+    --grey-500:#86868b;
+    --grey-600:#6e6e73;
+    --grey-900:#1d1d1f;
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        
-        .material-symbols-outlined.fill {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+    --glass-bg: rgba(255,255,255,0.55);
+    --glass-bg-strong: rgba(255,255,255,0.72);
+    --glass-border: rgba(255,255,255,0.75);
+    --glass-shadow: 0 10px 40px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.6);
+    --hairline: rgba(29,29,31,0.09);
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3a3939; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8c909f; 
-        }
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SF Mono", ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
 
-        /* Glassmorphism & Tonal Layering */
-        .glass-card {
-            background: #111111;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 14px;
+    --radius-pill: 999px;
 
-        .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
+    --ease: cubic-bezier(.16,1,.3,1);
+  }
 
-        /* Spotlight Effect on Hover */
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .glass-card:hover::before {
-            opacity: 1;
-        }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--font);
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #ffffff 0%, transparent 60%),
+      radial-gradient(1000px 700px at 100% 0%, #ffffff 0%, transparent 55%),
+      linear-gradient(180deg, var(--grey-50) 0%, var(--grey-100) 100%);
+    color:var(--grey-900);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-        .card-content {
-            position: relative;
-            z-index: 1;
-        }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  img,svg{ display:block; }
+  section{ position:relative; padding:120px 24px; }
+  .wrap{ max-width:1100px; margin:0 auto; }
 
-        /* Glows */
-        .glow-bg {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(59, 130, 246, 0.15); /* Accent color */
-            filter: blur(100px);
-            border-radius: 50%;
-            z-index: -1;
-            pointer-events: none;
-        }
+  ::selection{ background:rgba(29,29,31,0.12); }
 
-        /* Custom Cursor */
-        #custom-cursor {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-            mix-blend-mode: difference;
-        }
-        
-        #custom-cursor.hovering {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: transparent;
-        }
+  :focus-visible{
+    outline:2px solid var(--grey-900);
+    outline-offset:3px;
+    border-radius:8px;
+  }
 
-        /* Scroll Progress */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3B82F6, #A855F7);
-            z-index: 9998;
-            width: 0%;
-            transition: width 0.1s ease;
-        }
+  /* ---------- Ambient background orbs ---------- */
+  .orb{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(70px);
+    opacity:0.5;
+    z-index:0;
+    pointer-events:none;
+    background:radial-gradient(circle at 30% 30%, #ffffff, var(--grey-300) 70%);
+  }
+  .orb-1{ width:520px; height:520px; top:-160px; left:-140px; animation:float1 22s ease-in-out infinite; }
+  .orb-2{ width:420px; height:420px; top:220px; right:-160px; background:radial-gradient(circle at 30% 30%, #ffffff, var(--grey-200) 70%); animation:float2 26s ease-in-out infinite; }
+  .orb-3{ width:380px; height:380px; bottom:-180px; left:35%; background:radial-gradient(circle at 30% 30%, #ffffff, var(--grey-300) 70%); animation:float3 30s ease-in-out infinite; }
 
-        /* Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  @keyframes float1{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(40px,60px) scale(1.08); }
+  }
+  @keyframes float2{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(-50px,40px) scale(1.05); }
+  }
+  @keyframes float3{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(30px,-40px) scale(1.1); }
+  }
 
-        /* Typing cursor */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-start infinite;
-        }
-        @keyframes blink { 50% { opacity: 0; } }
-        
-        /* Rotating Text */
-        .rotating-text-wrapper {
-            display: inline-block;
-            position: relative;
-            height: 1.2em;
-            vertical-align: bottom;
-            overflow: hidden;
-            width: 100%;
-            text-align: center;
-        }
-        .rotating-text-inner {
-            display: flex;
-            flex-direction: column;
-            animation: rotateText 9s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-        }
-        @keyframes rotateText {
-            0%, 25% { transform: translateY(0); }
-            33%, 58% { transform: translateY(-33.33%); }
-            66%, 91% { transform: translateY(-66.66%); }
-            100% { transform: translateY(-100%); }
-        }
-        .rotating-item {
-            height: 1.2em;
-            line-height: 1.2;
-            background: linear-gradient(90deg, #3B82F6, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-        }
+  /* ---------- Glass utility ---------- */
+  .glass{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    box-shadow:var(--glass-shadow);
+    backdrop-filter:blur(24px) saturate(160%);
+    -webkit-backdrop-filter:blur(24px) saturate(160%);
+  }
 
-    </style>
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    padding:14px 24px;
+    transition:box-shadow .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{
+    background:rgba(251,251,253,0.75);
+    backdrop-filter:blur(20px) saturate(160%);
+    -webkit-backdrop-filter:blur(20px) saturate(160%);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    max-width:1100px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    width:36px; height:36px; border-radius:11px;
+    background:linear-gradient(160deg, var(--white), var(--grey-200));
+    border:1px solid var(--glass-border);
+    box-shadow:var(--glass-shadow);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:600; font-size:14px; letter-spacing:.5px;
+    color:var(--grey-900);
+  }
+  .nav-links{
+    display:flex; gap:32px;
+    font-size:13px; font-weight:500; color:var(--grey-600);
+  }
+  .nav-links a{ transition:color .2s; }
+  .nav-links a:hover{ color:var(--grey-900); }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* ---------- Eyebrow / headings ---------- */
+  .eyebrow{
+    font-size:12px; font-weight:600; letter-spacing:2.2px; text-transform:uppercase;
+    color:var(--grey-500); margin-bottom:14px;
+  }
+  h1,h2,h3{ letter-spacing:-0.02em; color:var(--grey-900); font-weight:650; }
+  .section-title{
+    font-size:clamp(28px,4vw,42px);
+    margin-bottom:48px;
+    font-weight:650;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex; flex-direction:column; justify-content:center;
+    padding-top:140px;
+  }
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 16px; border-radius:var(--radius-pill);
+    font-size:13px; font-weight:500; color:var(--grey-600);
+    margin-bottom:28px; width:fit-content;
+  }
+  .hero-badge .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--grey-900);
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.3; } }
+
+  .hero h1{
+    font-size:clamp(48px,8vw,92px);
+    line-height:1.02;
+    margin-bottom:20px;
+  }
+  .hero .sub{
+    font-size:clamp(20px,2.4vw,28px);
+    color:var(--grey-600);
+    font-weight:400;
+    max-width:640px;
+    margin-bottom:20px;
+    line-height:1.35;
+  }
+  .hero .body{
+    font-size:17px;
+    color:var(--grey-600);
+    max-width:560px;
+    line-height:1.6;
+    margin-bottom:40px;
+  }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px;
+    border-radius:var(--radius-pill);
+    font-size:15px; font-weight:500;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+    cursor:pointer; border:none;
+  }
+  .btn-primary{
+    background:var(--grey-900); color:var(--white);
+    box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,0.22); }
+  .btn-ghost{
+    color:var(--grey-900);
+  }
+  .btn-ghost:hover{ transform:translateY(-2px); }
+
+  /* ---------- Stats strip ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--hairline);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    margin-top:80px;
+  }
+  .stat{
+    background:var(--glass-bg-strong);
+    padding:32px 24px;
+    text-align:left;
+  }
+  .stat .num{ font-size:clamp(26px,3vw,36px); font-weight:650; color:var(--grey-900); }
+  .stat .label{ font-size:13px; color:var(--grey-600); margin-top:6px; }
+  @media (max-width:720px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ---------- Cards ---------- */
+  .card{
+    border-radius:var(--radius-lg);
+    padding:36px;
+  }
+
+  .divider{
+    height:1px; background:var(--hairline); margin-bottom:64px;
+  }
+
+  /* ---------- Experience ---------- */
+  .exp-card{ display:flex; flex-direction:column; gap:18px; }
+  .exp-head{
+    display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;
+  }
+  .exp-head h3{ font-size:22px; }
+  .exp-head .role{ font-size:15px; color:var(--grey-600); margin-top:4px; }
+  .exp-date{
+    font-size:13px; color:var(--grey-500); font-weight:500;
+    white-space:nowrap; text-align:right;
+    margin-left:auto;
+  }
+  .exp-card ul{ display:flex; flex-direction:column; gap:10px; }
+  .exp-card li{
+    font-size:15.5px; color:var(--grey-600); line-height:1.55;
+    padding-left:18px; position:relative;
+  }
+  .exp-card li::before{
+    content:""; position:absolute; left:0; top:9px;
+    width:5px; height:5px; border-radius:50%; background:var(--grey-400);
+  }
+
+  /* ---------- Projects ---------- */
+  .flagship-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;
+  }
+  @media (max-width:860px){ .flagship-grid{ grid-template-columns:1fr; } }
+
+  .proj-card{ display:flex; flex-direction:column; height:100%; }
+  .proj-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:6px; }
+  .proj-card h3{ font-size:21px; }
+  .proj-card .proj-date{ font-size:12.5px; color:var(--grey-500); white-space:nowrap; font-weight:500; }
+  .proj-tags{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 18px; }
+  .tag{
+    font-size:12px; padding:6px 12px; border-radius:var(--radius-pill);
+    background:var(--grey-150); color:var(--grey-600); font-weight:500;
+    border:1px solid var(--hairline);
+  }
+  .proj-card ul{ display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex:1; }
+  .proj-card li{
+    font-size:14.5px; color:var(--grey-600); line-height:1.55;
+    padding-left:16px; position:relative;
+  }
+  .proj-card li::before{
+    content:""; position:absolute; left:0; top:8px;
+    width:4px; height:4px; border-radius:50%; background:var(--grey-400);
+  }
+  .proj-link{
+    font-size:13.5px; font-weight:600; color:var(--grey-900);
+    display:inline-flex; align-items:center; gap:6px; width:fit-content;
+  }
+  .proj-link svg{ width:14px; height:14px; transition:transform .2s; }
+  .proj-link:hover svg{ transform:translate(3px,-3px); }
+
+  .secondary-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+  }
+  @media (max-width:860px){ .secondary-grid{ grid-template-columns:1fr; } }
+  .secondary-card{ padding:26px; }
+  .secondary-card h4{ font-size:16.5px; margin-bottom:4px; font-weight:600; }
+  .secondary-card .proj-date{ font-size:12px; color:var(--grey-500); margin-bottom:12px; display:block; }
+  .secondary-card p{ font-size:13.5px; color:var(--grey-600); line-height:1.55; }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:20px;
+  }
+  @media (max-width:860px){ .skills-grid{ grid-template-columns:1fr; } }
+  .skill-group{ padding:30px; }
+  .skill-group h4{ font-size:14px; font-weight:600; color:var(--grey-900); margin-bottom:16px; letter-spacing:.2px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-size:13px; padding:7px 14px; border-radius:var(--radius-pill);
+    background:var(--white); color:var(--grey-600); font-weight:500;
+    border:1px solid var(--hairline);
+    transition:transform .2s, box-shadow .2s, color .2s;
+  }
+  .chip:hover{ transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,0.06); color:var(--grey-900); }
+
+  /* ---------- Achievements timeline ---------- */
+  .timeline{ position:relative; padding-left:32px; }
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px;
+    background:var(--grey-300);
+  }
+  .t-item{ position:relative; padding-bottom:40px; }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{
+    content:""; position:absolute; left:-32px; top:5px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--grey-900); border:3px solid var(--grey-100);
+  }
+  .t-head{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px; }
+  .t-head h4{ font-size:17px; font-weight:600; }
+  .t-date{ font-size:12.5px; color:var(--grey-500); font-weight:500; white-space:nowrap; }
+  .t-org{ font-size:13.5px; color:var(--grey-500); margin-bottom:8px; }
+  .t-item p{ font-size:14.5px; color:var(--grey-600); line-height:1.6; max-width:640px; }
+
+  /* ---------- AI Assistant widget ---------- */
+  .ai-card{ padding:0; overflow:hidden; }
+  .ai-titlebar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 22px; border-bottom:1px solid var(--hairline);
+  }
+  .ai-dots{ display:flex; gap:7px; }
+  .ai-dots span{ width:10px; height:10px; border-radius:50%; background:var(--grey-300); }
+  .ai-title{ font-size:13px; font-weight:600; color:var(--grey-600); font-family:var(--font-mono); letter-spacing:.3px; }
+  .ai-status{ display:flex; align-items:center; gap:6px; font-size:12px; color:var(--grey-500); }
+  .ai-status .dot{ width:6px; height:6px; border-radius:50%; background:#4ade80; opacity:.8; }
+
+  .ai-body{ padding:22px; }
+  .ai-log{
+    display:flex; flex-direction:column; gap:14px;
+    min-height:160px; max-height:340px; overflow-y:auto;
+    margin-bottom:18px; padding-right:4px;
+  }
+  .ai-msg{ font-size:14.5px; line-height:1.6; max-width:88%; }
+  .ai-msg.user{
+    align-self:flex-end; background:var(--grey-900); color:var(--white);
+    padding:11px 16px; border-radius:16px 16px 4px 16px;
+  }
+  .ai-msg.bot{
+    align-self:flex-start; color:var(--grey-900);
+    background:var(--white); border:1px solid var(--hairline);
+    padding:11px 16px; border-radius:16px 16px 16px 4px;
+    font-family:var(--font-mono); font-size:13.5px;
+  }
+  .ai-msg.bot .cursor{
+    display:inline-block; width:7px; height:14px; background:var(--grey-900);
+    margin-left:2px; vertical-align:middle; animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .ai-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+  .ai-chip{
+    font-size:12.5px; padding:7px 13px; border-radius:var(--radius-pill);
+    background:var(--white); border:1px solid var(--hairline); color:var(--grey-600);
+    cursor:pointer; font-weight:500; transition:all .2s;
+  }
+  .ai-chip:hover{ background:var(--grey-900); color:var(--white); border-color:var(--grey-900); }
+
+  .ai-input-row{ display:flex; gap:10px; }
+  .ai-input{
+    flex:1; padding:13px 18px; border-radius:var(--radius-pill);
+    border:1px solid var(--grey-300); background:var(--white);
+    font-size:14.5px; font-family:var(--font); color:var(--grey-900);
+  }
+  .ai-input::placeholder{ color:var(--grey-400); }
+  .ai-send{
+    width:44px; height:44px; border-radius:50%; flex-shrink:0;
+    background:var(--grey-900); color:var(--white); border:none;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    transition:transform .2s;
+  }
+  .ai-send:hover{ transform:scale(1.06); }
+  .ai-send:disabled{ opacity:.4; cursor:default; transform:none; }
+  .ai-caption{ font-size:12px; color:var(--grey-500); margin-top:14px; text-align:center; }
+
+  /* ---------- Contact ---------- */
+  .contact-card{ text-align:center; padding:70px 40px; }
+  .contact-card h2{ font-size:clamp(30px,4.5vw,46px); margin-bottom:16px; }
+  .contact-card p{ font-size:16px; color:var(--grey-600); max-width:480px; margin:0 auto 36px; line-height:1.6; }
+  .contact-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .contact-pill{
+    display:flex; align-items:center; gap:10px;
+    padding:13px 22px; border-radius:var(--radius-pill);
+    background:var(--white); border:1px solid var(--hairline);
+    font-size:14.5px; font-weight:500; color:var(--grey-900);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .contact-pill:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.08); }
+  .contact-pill svg{ width:17px; height:17px; }
+
+  footer{
+    text-align:center; padding:36px 24px 48px;
+    font-size:12.5px; color:var(--grey-400);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  }
+</style>
 </head>
-<body class="antialiased">
-<div id="custom-cursor"></div>
-<div id="scroll-progress"></div>
-<!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 bg-[#111111]/70 backdrop-blur-[12px] border-b border-white/5 transition-all duration-300">
-<div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter h-16">
-<a class="font-display text-headline-md font-bold text-on-surface hover:text-white transition-colors cursor-hover" href="#">ZH</a>
-<div class="hidden md:flex items-center gap-6">
-<a class="font-display text-body-md text-primary font-bold border-b-2 border-primary pb-1 cursor-hover" href="#home">Home</a>
-<a class="font-display text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-hover" href="#projects">Projects</a>
-<a class="font-display text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-hover" href="#experience">Experience</a>
-<a class="font-display text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-hover" href="#research">Research</a>
-<a class="font-display text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-hover" href="#skills">Skills</a>
-<a class="font-display text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-hover" href="#contact">Contact</a>
-</div>
-<div class="flex items-center gap-4">
-<a class="hidden md:flex text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:bg-white/5 p-2 rounded-full cursor-hover scale-95 active:scale-90" href="#contact">
-<span class="material-symbols-outlined">mail</span>
-</a>
-<a class="hidden md:flex text-on-surface-variant hover:text-on-surface transition-all duration-300 hover:bg-white/5 p-2 rounded-full cursor-hover scale-95 active:scale-90" href="https://github.com" target="_blank">
-<span class="material-symbols-outlined">terminal</span>
-</a>
-<a class="font-display text-body-md text-primary border border-primary/30 px-4 py-2 rounded hover:bg-primary/10 transition-colors cursor-hover" href="Zaira_Hussain_AIEngineer.pdf">Resume</a>
-</div>
-</div>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="logo">ZH</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#ai">Ask AI</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
-<main class="relative z-10">
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center pt-20 px-gutter overflow-hidden" id="home">
-<!-- Neural Background Shader -->
-<!-- STITCH_SHADER_START:ANIMATION_1 class="absolute inset-0 w-full h-full opacity-40 z-0" -->
-<div class="absolute inset-0 w-full h-full opacity-40 z-0" style="display:block;">
-<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
-<script>
-(function() {
-  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
 
-  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
-  // This fires on initial layout and whenever the element is resized.
-  function syncSize() {
-    const w = canvas.clientWidth  || 1280;
-    const h = canvas.clientHeight || 720;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-    }
-  }
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(syncSize).observe(canvas);
-  }
-  syncSize();
+<main>
 
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) return;
-  const vs = `attribute vec2 a_position;
-varying vec2 v_texCoord;
-void main() {
-  v_texCoord = a_position * 0.5 + 0.5;
-  gl_Position = vec4(a_position, 0.0, 1.0);
-}`;
-  const fs = `precision highp float;
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-badge glass">
+      <span class="dot"></span> AI Engineer · Indore, India
+    </div>
+    <h1>Zaira Hussain</h1>
+    <p class="sub">Building at the intersection of language models, data, and real products.</p>
+    <p class="body">B.Tech Computer Science student at IIST Indore, graduating 2027. Two AI products live in production, research presented at IGNITEX-2025, and a Semi-Finalist finish at ET AI Hackathon 2026 — built hands-on with the OpenAI and Anthropic APIs.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost glass">Get in Touch</a>
+    </div>
 
-varying vec2 v_texCoord;
-uniform float u_time;
-uniform vec2 u_resolution;
-uniform vec2 u_mouse;
+    <div class="stats reveal">
+      <div class="stat">
+        <div class="num">8.23</div>
+        <div class="label">CGPA, no backlogs</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="label">Live AI products</div>
+      </div>
+      <div class="stat">
+        <div class="num">Top 3%</div>
+        <div class="label">GSSoC 2026 · 43,587 contributors</div>
+      </div>
+      <div class="stat">
+        <div class="num">Semi‑Finalist</div>
+        <div class="label">ET AI Hackathon 2026</div>
+      </div>
+    </div>
+  </section>
 
-float noise(vec2 p) {
-    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
-}
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">Work</div>
+      <h2 class="section-title reveal">Experience</h2>
 
-void main() {
-    vec2 uv = v_texCoord;
-    vec2 mouse = u_mouse / u_resolution;
-    
-    // Create a subtle grid/neural network pattern
-    vec2 grid = fract(uv * 40.0 + u_time * 0.02);
-    float line = smoothstep(0.02, 0.0, abs(grid.x - 0.5)) + smoothstep(0.02, 0.0, abs(grid.y - 0.5));
-    
-    // Add atmospheric glow
-    float dist = distance(uv, mouse);
-    float glow = smoothstep(0.5, 0.0, dist) * 0.15;
-    
-    // Pulsing nodes
-    vec2 nodePos = floor(uv * 40.0) / 40.0 + 0.0125;
-    float nodeDist = distance(uv, nodePos);
-    float pulse = (sin(u_time * 2.0 + noise(nodePos) * 10.0) * 0.5 + 0.5);
-    float nodes = smoothstep(0.005, 0.0, nodeDist) * pulse * 0.4;
-    
-    vec3 bgColor = vec3(0.02, 0.02, 0.03); // #050505 equivalent
-    vec3 accentColor = vec3(0.23, 0.51, 0.96); // Electric Blue
-    
-    vec3 finalColor = mix(bgColor, accentColor, (line * 0.03 + nodes * 0.5 + glow));
-    
-    gl_FragColor = vec4(finalColor, 1.0);
-}`;
-  function cs(type, src) {
-    const s = gl.createShader(type);
-    gl.shaderSource(s, src);
-    gl.compileShader(s);
-    return s;
-  }
-  const prog = gl.createProgram();
-  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'a_position');
-  gl.enableVertexAttribArray(pos);
-  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes = gl.getUniformLocation(prog, 'u_resolution');
-  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+      <div class="card glass exp-card reveal">
+        <div class="exp-head">
+          <div>
+            <h3>Ashoksoft</h3>
+            <div class="role">AI Intern</div>
+          </div>
+          <div class="exp-date">Jun 2026 — Present</div>
+        </div>
+        <ul>
+          <li>Developing the AI model for Campus2Corporate (C2C), a career development and talent acquisition platform — powering candidate‑job matching, skill assessment, and recruitment workflow automation.</li>
+          <li>Working inside a production engineering team on a React + TypeScript + Vite codebase, contributing AI/ML components integrated with the core SaaS architecture.</li>
+          <li>Shipping features via Git-based version control across a 4-member team into a live, in-development product.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
-  // Shaders that need normalized coords should use: u_mouse / u_resolution.
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      const nx = (event.clientX - rect.left) / rect.width;
-      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-      mouse.x = nx * canvas.width;
-      mouse.y = ny * canvas.height;
-    }
-  });
+  <!-- PROJECTS -->
+  <section id="work">
+    <div class="wrap">
+      <div class="eyebrow reveal">Selected Work</div>
+      <h2 class="section-title reveal">Flagship Projects</h2>
 
-  function render(t) {
-    if (typeof ResizeObserver === 'undefined') syncSize();
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    if (uTime) gl.uniform1f(uTime, t * 0.001);
-    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(render);
-  }
-  render(0);
-})();
-</script>
-</div>
-<!-- STITCH_SHADER_END:ANIMATION_1 -->
-<div class="glow-bg top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-<div class="max-w-container-max w-full mx-auto relative z-10 text-center reveal">
-<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-white/10 mb-8">
-<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-<span class="font-label-mono text-caption text-on-surface-variant">Open for AI/ML Internship Opportunities</span>
-</div>
-<h1 class="font-display text-display md:text-[80px] font-bold text-on-surface mb-4 tracking-tight">
-                    Hi, I'm Zaira Hussain
-                </h1>
-<div class="font-display text-headline-lg-mobile md:text-headline-lg font-semibold mb-8 text-on-surface-variant h-[1.2em]">
-<div class="rotating-text-wrapper">
-<div class="rotating-text-inner">
-<span class="rotating-item">Generative AI Engineer</span>
-<span class="rotating-item">Machine Learning Engineer</span>
-<span class="rotating-item">Full Stack AI Developer</span>
-<span class="rotating-item">Generative AI Engineer</span> <!-- Duplicate for seamless loop -->
-</div>
-</div>
-</div>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 min-h-[4.8em]" id="typewriter-text"></p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-<a class="cursor-hover px-8 py-3 rounded-DEFAULT bg-primary text-base font-body-md font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto" href="#projects">
-                        View Projects
-                    </a>
-<a class="cursor-hover px-8 py-3 rounded-DEFAULT bg-transparent border border-white/10 text-on-surface font-body-md font-medium hover:bg-white/5 hover:border-white/20 transition-all w-full sm:w-auto flex items-center justify-center gap-2" href="Zaira_Hussain_AIEngineer.pdf">
-                        Download Resume <span class="material-symbols-outlined text-[18px]">download</span>
-</a>
-</div>
-</div>
-<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-<span class="material-symbols-outlined text-on-surface-variant opacity-50">arrow_downward</span>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-section-gap px-gutter relative" id="about">
-<div class="max-w-container-max mx-auto reveal">
-<div class="grid md:grid-cols-2 gap-stack-lg items-center">
-<div class="relative group">
-<div class="absolute inset-0 bg-accent/20 blur-3xl rounded-full transform -rotate-12 group-hover:bg-accent-purple/20 transition-colors duration-700"></div>
-<div class="glass-card aspect-square rounded-2xl overflow-hidden relative z-10 p-2">
-<div class="bg-cover bg-center w-full h-full rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 opacity-80 group-hover:opacity-100" data-alt="A highly professional and cinematic portrait placeholder of an AI engineer in a modern, dark-themed tech office. Subtle blue and purple neon lighting reflects on glass surfaces. The mood is focused and forward-leaning, representing technical mastery and minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYxw_yEHsa7SQAvN2Vp5gIodaix5mszqaEhCLug0OIh6WWauSbYAheRjuISEqCcU8-prbVznBEMJ2891AmAHu9LzoaVk-6yPjViKfrfXCg_0VS6r_c_bIax5RIx0W-XnWlOCyBTPabMPbaJjjhhCXWqwy1syp9cWlBia-Ahfd0f4IArfmXA_FoqswuQyQo_B916IKuuEE5pKqjO-azefUTR5FHZQ8rqchjElkluygCXAWL3vaoiTOA28g--1WxOGBuIMRn8nLUC7k')"></div>
-</div>
-</div>
-<div class="space-y-6">
-<h2 class="font-display text-headline-lg font-bold text-on-surface">Engineering the Future of Intelligence</h2>
-<div class="space-y-4 font-body-md text-on-surface-variant">
-<p>
-                                I am a B.Tech Computer Science Engineering student (Graduating 2027, 8.23 CGPA) driven by the conviction that artificial intelligence should augment human capability and solve complex, real-world problems securely.
-                            </p>
-<p>
-                                My focus lies at the intersection of Large Language Models (LLMs), AI Safety, and Full Stack Engineering. I don't just build models; I construct end-to-end intelligent systems that transform research concepts into robust production environments.
-                            </p>
-</div>
-<div class="grid grid-cols-2 gap-4 pt-6">
-<div class="glass-card p-4 card-content">
-<div class="font-display text-headline-md text-primary font-bold mb-1">12+</div>
-<div class="font-label-mono text-caption text-on-surface-variant">Projects Completed</div>
-</div>
-<div class="glass-card p-4 card-content">
-<div class="font-display text-headline-md text-primary font-bold mb-1">1</div>
-<div class="font-label-mono text-caption text-on-surface-variant">Research Paper</div>
-</div>
-<div class="glass-card p-4 card-content">
-<div class="font-display text-headline-md text-primary font-bold mb-1">5</div>
-<div class="font-label-mono text-caption text-on-surface-variant">Hackathons</div>
-</div>
-<div class="glass-card p-4 card-content">
-<div class="font-display text-headline-md text-primary font-bold mb-1">450+</div>
-<div class="font-label-mono text-caption text-on-surface-variant">GitHub Contributions</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Skills Section -->
-<section class="py-section-gap px-gutter relative bg-surface-container-low/30 border-y border-white/5" id="skills">
-<div class="glow-bg top-0 right-0 opacity-50"></div>
-<div class="max-w-container-max mx-auto reveal">
-<h2 class="font-display text-headline-lg font-bold text-on-surface mb-stack-lg">Technical Arsenal</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Programming -->
-<div class="glass-card p-6 card-content">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-accent">code</span>
-<h3 class="font-display text-body-lg font-semibold text-on-surface">Programming</h3>
-</div>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">Python</span>
-<span class="text-primary">95%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">C++</span>
-<span class="text-primary">85%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">JavaScript/TS</span>
-<span class="text-primary">80%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- AI & Machine Learning -->
-<div class="glass-card p-6 card-content">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-accent-purple">psychology</span>
-<h3 class="font-display text-body-lg font-semibold text-on-surface">AI &amp; ML</h3>
-</div>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">OpenAI API &amp; LLMs</span>
-<span class="text-accent-purple">90%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-accent-purple h-1.5 rounded-full" style="width: 90%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">Prompt Engineering</span>
-<span class="text-accent-purple">95%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-accent-purple h-1.5 rounded-full" style="width: 95%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">Scikit-learn / PyTorch</span>
-<span class="text-accent-purple">80%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-accent-purple h-1.5 rounded-full" style="width: 80%"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Development & Cloud -->
-<div class="glass-card p-6 card-content">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-secondary">cloud</span>
-<h3 class="font-display text-body-lg font-semibold text-on-surface">Dev &amp; Cloud</h3>
-</div>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">React / Next.js</span>
-<span class="text-secondary">85%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-secondary h-1.5 rounded-full" style="width: 85%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">Docker / Git</span>
-<span class="text-secondary">90%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-secondary h-1.5 rounded-full" style="width: 90%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between font-label-mono text-caption mb-1">
-<span class="text-on-surface">AWS / GCP Basics</span>
-<span class="text-secondary">75%</span>
-</div>
-<div class="w-full bg-surface-container-highest rounded-full h-1.5">
-<div class="bg-secondary h-1.5 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Projects -->
-<section class="py-section-gap px-gutter relative" id="projects">
-<div class="max-w-container-max mx-auto reveal">
-<h2 class="font-display text-headline-lg font-bold text-on-surface mb-stack-lg">Featured Systems</h2>
-<div class="space-y-stack-md">
-<!-- Project 1 -->
-<div class="glass-card card-content grid md:grid-cols-12 gap-0 overflow-hidden group">
-<div class="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-700 opacity-70" data-alt="A sleek, dark-themed UI mockup of an AI public speaking coach application named Verbalystic. Abstract waveforms and analytical charts are visible, emphasizing voice analysis and machine learning. Professional, high-contrast, minimalist tech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_H1joJH6nlrtZsZJJ7jjlvWkQ55gIXJxQWVjZlIK5LDyyfV7sNVXOUL9FrkDygQ6ivVXENKjuKpcDBmv9Wx9_a2_ozBxfe7lBkshbsswJJ1B1FwvvkuklVIRqBSUHQPlHxssrwKcHICgo9WULtgR5mhYeVWqiQt6e5Q_F1K_u2tHH7oiNFkQzdN09UYzEuE2xq5tmCDVqd9xQGKMx6lVCXU0T6xGTbaVfsAYArSxHyTLUayHI6f7UVr-hPTyOgoJ68UnFXdj7oHM')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-transparent to-[#111111] hidden md:block"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent md:hidden"></div>
-</div>
-<div class="md:col-span-7 p-8 flex flex-col justify-center relative z-10 bg-[#111111]/80 backdrop-blur-sm">
-<div class="flex items-center gap-2 mb-3">
-<span class="px-2 py-1 bg-primary/10 text-primary font-label-mono text-[10px] rounded uppercase tracking-wider border border-primary/20">Generative AI</span>
-<span class="px-2 py-1 bg-accent-purple/10 text-accent-purple font-label-mono text-[10px] rounded uppercase tracking-wider border border-accent-purple/20">Full Stack</span>
-</div>
-<h3 class="font-display text-headline-md font-bold text-on-surface mb-3">Verbalystic</h3>
-<p class="font-body-md text-on-surface-variant mb-6">
-                                An intelligent AI Public Speaking Coach. Integrates advanced speech-to-text, LLM-based sentiment and pacing analysis, and real-time feedback generation to improve presentation skills. Built a robust pipeline handling audio processing in browser.
-                            </p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">Python</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">FastAPI</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">React</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">OpenAI Whisper</span>
-</div>
-<div class="flex items-center gap-4 mt-auto">
-<a class="cursor-hover flex items-center gap-2 font-label-mono text-caption text-primary hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[18px]">open_in_new</span> Live Demo
-                                </a>
-<a class="cursor-hover flex items-center gap-2 font-label-mono text-caption text-on-surface-variant hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[18px]">code</span> Source
-                                </a>
-<a class="cursor-hover ml-auto px-4 py-2 border border-white/10 rounded font-label-mono text-caption hover:bg-white/5 transition-colors" href="#">
-                                    Case Study
-                                </a>
-</div>
-</div>
-</div>
-<!-- Project 2 -->
-<div class="glass-card card-content grid md:grid-cols-12 gap-0 overflow-hidden group">
-<div class="md:col-span-7 p-8 flex flex-col justify-center relative z-10 bg-[#111111]/80 backdrop-blur-sm order-2 md:order-1">
-<div class="flex items-center gap-2 mb-3">
-<span class="px-2 py-1 bg-secondary/10 text-secondary font-label-mono text-[10px] rounded uppercase tracking-wider border border-secondary/20">RAG</span>
-<span class="px-2 py-1 bg-error/10 text-error font-label-mono text-[10px] rounded uppercase tracking-wider border border-error/20">Compliance</span>
-</div>
-<h3 class="font-display text-headline-md font-bold text-on-surface mb-3">RegLens AI</h3>
-<p class="font-body-md text-on-surface-variant mb-6">
-                                A specialized LLM Regulatory Compliance Assistant. Utilizes Retrieval-Augmented Generation (RAG) to parse dense legal documents and provide cited, accurate answers to compliance queries. Implemented stringent guardrails for AI safety.
-                            </p>
-<div class="flex flex-wrap gap-2 mb-6">
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">LangChain</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">Vector DB</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">Next.js</span>
-<span class="font-label-mono text-caption text-on-surface bg-surface-container-highest px-3 py-1 rounded">Claude 3</span>
-</div>
-<div class="flex items-center gap-4 mt-auto">
-<a class="cursor-hover flex items-center gap-2 font-label-mono text-caption text-primary hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[18px]">lock</span> Private Beta
-                                </a>
-<a class="cursor-hover ml-auto px-4 py-2 border border-white/10 rounded font-label-mono text-caption hover:bg-white/5 transition-colors" href="#">
-                                    Case Study
-                                </a>
-</div>
-</div>
-<div class="md:col-span-5 relative h-64 md:h-auto overflow-hidden order-1 md:order-2">
-<div class="absolute inset-0 bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-700 opacity-70" data-alt="Abstract digital representation of legal documents being scanned by artificial intelligence. Glowing nodes connecting to lines of text in a dark, minimalist cybersecurity aesthetic. Soft blue and cyan lighting emphasizing trust and accuracy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsryMwt4yUUR6QrQvfYaolxwU-zX8TMNXXe2hoU0MSef0AJR9lO8EmDxN879dQ3PWNL_u8ifAEpP43iFBacJHLYyzX2OEt6c8t2EoBosEnqSgNbbCko8oREgKnWd-jXjLqtryOYcOkgbPL0_foyTkPf0k4tYdzmKLyqM5XZO7iLbft5tnHO1Qm9FVXOURvJLGsCmKOED0L7eRlPPzXzJQl8X_1D0BrBU_JCkVm6hahTXVHo3H7S5kQSpvClUpsP23fZ4c2T6ZmMzE')"></div>
-<div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#111111] hidden md:block"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent md:hidden"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Experience & Research -->
-<section class="py-section-gap px-gutter relative bg-surface-container-low/30 border-y border-white/5" id="experience">
-<div class="max-w-container-max mx-auto reveal">
-<div class="grid lg:grid-cols-2 gap-stack-lg">
-<!-- Experience -->
-<div>
-<h2 class="font-display text-headline-lg font-bold text-on-surface mb-stack-md flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">work</span> Experience
-                        </h2>
-<div class="relative pl-8 border-l border-white/10 space-y-8">
-<div class="relative">
-<div class="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-[#050505]"></div>
-<div class="glass-card p-6 card-content">
-<div class="flex justify-between items-start mb-2">
-<h3 class="font-display text-body-lg font-semibold text-on-surface">AI Intern</h3>
-<span class="font-label-mono text-caption text-primary">2024 - Present</span>
-</div>
-<div class="font-body-md text-on-surface-variant mb-4">Ashoksoft</div>
-<ul class="space-y-2 font-body-md text-on-surface-variant text-sm list-disc list-inside">
-<li>Developed internal tools utilizing LLMs to automate code review processes, reducing manual review time by 30%.</li>
-<li>Collaborated on building data pipelines for fine-tuning open-source models (Llama-3).</li>
-<li>Implemented semantic search features across company documentation using vector embeddings.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<!-- Research -->
-<div id="research">
-<h2 class="font-display text-headline-lg font-bold text-on-surface mb-stack-md flex items-center gap-3">
-<span class="material-symbols-outlined text-accent-purple">menu_book</span> Research
-                        </h2>
-<div class="glass-card p-6 card-content h-full">
-<div class="inline-block px-3 py-1 bg-white/5 rounded-full font-label-mono text-caption text-on-surface-variant mb-4 border border-white/10">
-                                Conference Paper
-                            </div>
-<h3 class="font-display text-headline-md font-bold text-on-surface mb-3 leading-snug">
-                                Optimizing Retrieval-Augmented Generation (RAG) Pipelines for Low-Latency Applications
-                            </h3>
-<div class="font-body-md text-on-surface-variant mb-6">
-                                Presented at IGNITEX-2025. Co-authored with Dr. A. Sharma.
-                            </div>
-<p class="font-body-md text-on-surface-variant mb-6 text-sm">
-                                This paper explores novel indexing strategies and hybrid search techniques to significantly reduce query latency in RAG systems while maintaining high contextual accuracy, specifically designed for real-time customer service AI agents.
-                            </p>
-<a class="cursor-hover inline-flex items-center gap-2 font-label-mono text-caption text-primary hover:text-white transition-colors" href="#">
-                                Read Paper <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Achievements & Open Source -->
-<section class="py-section-gap px-gutter relative">
-<div class="max-w-container-max mx-auto reveal">
-<div class="grid md:grid-cols-2 gap-6">
-<div class="glass-card p-6 card-content flex items-start gap-4">
-<div class="p-3 bg-secondary/10 rounded-lg text-secondary">
-<span class="material-symbols-outlined">emoji_events</span>
-</div>
-<div>
-<h3 class="font-display text-body-lg font-semibold text-on-surface mb-1">ET AI Hackathon Semi-finalist</h3>
-<p class="font-body-md text-on-surface-variant text-sm">Recognized for developing an AI-driven predictive maintenance dashboard for manufacturing. Placed in the top 50 out of 2000+ teams.</p>
-</div>
-</div>
-<div class="glass-card p-6 card-content flex items-start gap-4">
-<div class="p-3 bg-primary/10 rounded-lg text-primary">
-<span class="material-symbols-outlined">star</span>
-</div>
-<div class="w-full">
-<h3 class="font-display text-body-lg font-semibold text-on-surface mb-1">Open Source Contributor</h3>
-<p class="font-body-md text-on-surface-variant text-sm mb-4">Top 3% contributor in AI/ML repositories.</p>
-<!-- GitHub Activity Visualization Placeholder -->
-<div class="w-full h-24 bg-surface-container-highest/50 rounded border border-white/5 relative overflow-hidden flex items-center justify-center">
-<span class="font-label-mono text-caption text-on-surface-variant/50">GitHub Activity Graph Visualization</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="py-section-gap px-gutter relative" id="contact">
-<div class="glow-bg bottom-0 left-0 opacity-40"></div>
-<div class="max-w-container-max mx-auto reveal">
-<div class="glass-card p-8 md:p-12 card-content">
-<div class="grid lg:grid-cols-2 gap-12">
-<div>
-<h2 class="font-display text-headline-lg font-bold text-on-surface mb-4">Let's Build the Future</h2>
-<p class="font-body-md text-on-surface-variant mb-8">
-                                Currently seeking AI/ML Internship opportunities. Whether you have a challenging problem to solve or just want to discuss the latest in GenAI, my inbox is open.
-                            </p>
-<div class="space-y-6 mb-8">
-<div class="flex items-center gap-4 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary">location_on</span>
-<span class="font-body-md">Indore, India</span>
-</div>
-<div class="flex items-center gap-4 text-on-surface-variant">
-<span class="material-symbols-outlined text-primary">mail</span>
-<a class="font-body-md hover:text-white transition-colors cursor-hover" href="mailto:hello@example.com">zairahussain27@gmail.com</a>
-</div>
-</div>
-<div class="flex gap-4">
-<a class="cursor-hover w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-on-surface-variant hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="font-label-mono text-caption font-bold">in</span>
-</a>
-<a class="cursor-hover w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-on-surface-variant hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="font-label-mono text-caption font-bold">gh</span>
-</a>
-<a class="cursor-hover w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-on-surface-variant hover:text-white hover:bg-white/10 transition-all" href="#">
-<span class="font-label-mono text-caption font-bold">x</span>
-</a>
-</div>
-</div>
-<div>
-<form class="space-y-4">
-<div class="grid grid-cols-2 gap-4">
-<div>
-<label class="block font-label-mono text-caption text-on-surface-variant mb-2">Name</label>
-<input class="w-full bg-[#050505] border border-white/10 rounded-DEFAULT px-4 py-3 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all cursor-hover" placeholder="John Doe" type="text"/>
-</div>
-<div>
-<label class="block font-label-mono text-caption text-on-surface-variant mb-2">Email</label>
-<input class="w-full bg-[#050505] border border-white/10 rounded-DEFAULT px-4 py-3 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all cursor-hover" placeholder="john@example.com" type="email"/>
-</div>
-</div>
-<div>
-<label class="block font-label-mono text-caption text-on-surface-variant mb-2">Message</label>
-<textarea class="w-full bg-[#050505] border border-white/10 rounded-DEFAULT px-4 py-3 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none cursor-hover" placeholder="How can we collaborate?" rows="4"></textarea>
-</div>
-<button class="cursor-hover w-full py-3 rounded-DEFAULT bg-primary text-base font-body-md font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2" type="button">
-                                    Send Message <span class="material-symbols-outlined text-[18px]">send</span>
-</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer (Shared Component) -->
-<footer class="w-full py-stack-lg border-t border-outline-variant/20 bg-background relative z-10">
-<div class="max-w-[1200px] mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-stack-md">
-<div class="font-display text-headline-md text-primary font-bold">ZH</div>
-<div class="font-body-md text-caption text-on-surface-variant">
-                Made with ❤️ by Zaira Hussain
+      <div class="flagship-grid">
+        <div class="card glass proj-card reveal">
+          <div class="proj-top">
+            <h3>Verbalystic</h3>
+            <span class="proj-date">Dec 2025 — Present</span>
+          </div>
+          <div style="font-size:14px;color:var(--grey-500);">AI Public Speaking Coach · Live</div>
+          <div class="proj-tags">
+            <span class="tag">Python</span><span class="tag">React</span><span class="tag">AI Speech API</span><span class="tag">Vercel</span>
+          </div>
+          <ul>
+            <li>Full-stack web app analysing speech in real time for fluency, pronunciation, and confidence — live with real users.</li>
+            <li>Python backend handles AI inference and REST routing to the React frontend; 64+ commits, 6 production deployments.</li>
+            <li>Research presented at IGNITEX-2025, Dept. of CSE, IIST Indore.</li>
+          </ul>
+          <a class="proj-link" href="https://github.com/zairahussain27" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <div class="card glass proj-card reveal">
+          <div class="proj-top">
+            <h3>reglens-ai</h3>
+            <span class="proj-date">Apr 2026 — Present</span>
+          </div>
+          <div style="font-size:14px;color:var(--grey-500);">LLM Regulatory Compliance Assistant</div>
+          <div class="proj-tags">
+            <span class="tag">Python</span><span class="tag">OpenAI API</span><span class="tag">Anthropic API</span><span class="tag">Prompt Engineering</span>
+          </div>
+          <ul>
+            <li>LLM-powered compliance assistant for FinTechs, orchestrated through multi-step prompt pipelines.</li>
+            <li>Few-shot and chain-of-thought workflows tuned toward honest, structured outputs.</li>
+            <li>Async LLM inference and structured output validation, end-to-end — deploying to production as her second live AI product.</li>
+          </ul>
+          <a class="proj-link" href="https://github.com/zairahussain27" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="secondary-grid">
+        <div class="card glass secondary-card reveal">
+          <h4>AI Fraud Detection &amp; Risk Intelligence</h4>
+          <span class="proj-date">Feb — Mar 2026</span>
+          <p>End-to-end ML pipeline on 284,000+ financial records; 10+ engineered features reaching 92%+ fraud detection accuracy, with an automated risk-scoring Power BI dashboard.</p>
+        </div>
+        <div class="card glass secondary-card reveal">
+          <h4>Customer Churn Prediction</h4>
+          <span class="proj-date">Dec 2025 — Jan 2026</span>
+          <p>Cleaned 7,000+ telecom records via SQL; classification model flagging 35% of customers as high-attrition risk, backed by a 10-visual Power BI dashboard.</p>
+        </div>
+        <div class="card glass secondary-card reveal">
+          <h4>Business Sales Intelligence Dashboard</h4>
+          <span class="proj-date">2025</span>
+          <p>Enterprise BI dashboard tracking revenue, profit, region, and category KPIs with interactive DAX measures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow reveal">Toolkit</div>
+      <h2 class="section-title reveal">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="card glass skill-group reveal">
+          <h4>Generative AI &amp; LLMs</h4>
+          <div class="chip-row">
+            <span class="chip">OpenAI API</span><span class="chip">Anthropic API</span><span class="chip">Prompt Engineering</span>
+            <span class="chip">Few-Shot Learning</span><span class="chip">Chain-of-Thought</span><span class="chip">LLM Pipelines</span>
+            <span class="chip">Structured Output Validation</span><span class="chip">Async Inference</span><span class="chip">NLP</span>
+          </div>
+        </div>
+        <div class="card glass skill-group reveal">
+          <h4>Machine Learning</h4>
+          <div class="chip-row">
+            <span class="chip">Scikit-learn</span><span class="chip">Classification</span><span class="chip">Regression</span>
+            <span class="chip">Clustering</span><span class="chip">Feature Engineering</span><span class="chip">EDA</span><span class="chip">Model Evaluation</span>
+          </div>
+        </div>
+        <div class="card glass skill-group reveal">
+          <h4>Languages</h4>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
+          </div>
+        </div>
+        <div class="card glass skill-group reveal">
+          <h4>Full-Stack &amp; Data</h4>
+          <div class="chip-row">
+            <span class="chip">React</span><span class="chip">REST APIs</span><span class="chip">Node.js</span><span class="chip">Git</span>
+            <span class="chip">CI/CD</span><span class="chip">Vercel</span><span class="chip">Pandas</span><span class="chip">Power BI</span><span class="chip">DAX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="eyebrow reveal">Recognition</div>
+      <h2 class="section-title reveal">Achievements</h2>
+
+      <div class="card glass reveal" style="padding:44px;">
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-head">
+              <h4>Research Paper — IGNITEX-2025 National Conference</h4>
+              <span class="t-date">Jan 2026</span>
             </div>
-<div class="flex gap-4">
-<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 cursor-hover" href="#">GitHub</a>
-<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 cursor-hover" href="#">LinkedIn</a>
-<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 cursor-hover" href="#">Twitter</a>
-<a class="font-body-md text-caption text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100 cursor-hover" href="#">Email</a>
-</div>
-</div>
-</footer>
-<!-- Scripts for Interactions -->
+            <div class="t-org">Dept. of CSE, IIST Indore</div>
+            <p>"Verbalystic: A Real-Time Multi-Dimensional AI Speech Analysis System" — presented and awarded a Certificate of Participation.</p>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              <h4>Semi-Finalist — ET AI Hackathon 2026</h4>
+              <span class="t-date">May 2026</span>
+            </div>
+            <div class="t-org">The Economic Times Digital</div>
+            <p>Recognised for innovation, collaborative spirit, and building meaningful AI solutions under competition conditions.</p>
+          </div>
+          <div class="t-item">
+            <div class="t-head">
+              <h4>GSSoC 2026 — Top 3% of 43,587 Contributors</h4>
+              <span class="t-date">2026</span>
+            </div>
+            <div class="t-org">GirlScript Summer of Code</div>
+            <p>Ranked #906 globally, with 8 merged pull requests across 5 open-source projects — bug fixes, accessibility improvements, and documentation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI ASSISTANT -->
+  <section id="ai">
+    <div class="wrap">
+      <div class="eyebrow reveal">AI Assistant</div>
+      <h2 class="section-title reveal">Ask about Zaira</h2>
+
+      <div class="card glass ai-card reveal" style="max-width:640px;">
+        <div class="ai-titlebar">
+          <div class="ai-dots"><span></span><span></span><span></span></div>
+          <div class="ai-title">zaira-concierge.js</div>
+          <div class="ai-status"><span class="dot"></span> ready</div>
+        </div>
+        <div class="ai-body">
+          <div class="ai-log" id="aiLog">
+            <div class="ai-msg bot">Hi — I'm a small assistant built into this page. Ask me about Zaira's projects, skills, experience, or achievements.</div>
+          </div>
+          <div class="ai-chips">
+            <button class="ai-chip" data-q="projects">Projects</button>
+            <button class="ai-chip" data-q="skills">Skills</button>
+            <button class="ai-chip" data-q="experience">Experience</button>
+            <button class="ai-chip" data-q="achievements">Achievements</button>
+            <button class="ai-chip" data-q="contact">Contact</button>
+          </div>
+          <div class="ai-input-row">
+            <input type="text" class="ai-input" id="aiInput" placeholder="Ask a question…" aria-label="Ask about Zaira">
+            <button class="ai-send" id="aiSend" aria-label="Send">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
+            </button>
+          </div>
+          <div class="ai-caption">Runs entirely in your browser — a local matching engine, not a live model call.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="card glass contact-card reveal">
+        <h2>Let's build something.</h2>
+        <p>Open to Generative AI, ML, and full-stack roles — always happy to talk about LLMs, alignment, or the next hackathon.</p>
+        <div class="contact-links">
+          <a class="contact-pill" href="mailto:zairahussain27@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            zairahussain27@gmail.com
+          </a>
+          <a class="contact-pill" href="https://www.linkedin.com/in/zairahussain/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13c0-2.2 1.8-4 4-4s4 1.8 4 4v8"/></svg>
+            LinkedIn
+          </a>
+          <a class="contact-pill" href="https://github.com/zairahussain27" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Designed &amp; built by Zaira Hussain · Indore, India</footer>
+
 <script>
-        // Custom Cursor Logic
-        const cursor = document.getElementById('custom-cursor');
-        const hoverables = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive:true });
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            // Spotlight effect for glass cards
-            document.querySelectorAll('.glass-card').forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.12 });
+  reveals.forEach(el => io.observe(el));
 
-        hoverables.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-        });
+  // ---------- AI concierge ----------
+  const qa = [
+    { k:['project','verbalystic','reglens','built','work on','portfolio'],
+      a:"Two flagship products: Verbalystic, a live AI speech coach analysing fluency and confidence in real time, and reglens-ai, an LLM compliance assistant for FinTechs built on the OpenAI and Anthropic APIs. She's also shipped a 92%+ accuracy fraud detection system and a churn prediction model." },
+    { k:['skill','stack','tech','language','tool'],
+      a:"Core stack: Python, OpenAI & Anthropic APIs, prompt engineering, chain-of-thought and few-shot workflows, Scikit-learn, React, SQL, and Power BI. Comfortable across the full pipeline — from LLM orchestration to deployment." },
+    { k:['experience','job','intern','ashoksoft','work history'],
+      a:"Currently an AI Intern at Ashoksoft, building the AI model for Campus2Corporate — candidate-job matching, skill assessment, and recruitment workflow automation on a React + TypeScript + Vite stack." },
+    { k:['achievement','award','hackathon','research','paper','gssoc','rank'],
+      a:"Semi-Finalist at ET AI Hackathon 2026, presented research at IGNITEX-2025, and ranked in the top 3% of 43,587 contributors at GSSoC 2026 with 8 merged pull requests." },
+    { k:['education','college','cgpa','degree','study','university'],
+      a:"B.Tech in Computer Science Engineering at Indore Institute of Science and Technology (IIST), graduating May 2027, with a CGPA of 8.23 and no backlogs." },
+    { k:['contact','email','reach','hire','linkedin','github'],
+      a:"Best reached at zairahussain27@gmail.com, or find her on LinkedIn and GitHub — links are in the contact section below." },
+    { k:['who','about','yourself','bio'],
+      a:"Zaira is a Generative AI developer and full-stack builder from Indore, India — motivated by AI safety, alignment, and shipping real products, not just prototypes." },
+    { k:['hi','hello','hey'],
+      a:"Hey! Ask me about her projects, skills, experience, or achievements — or use the chips below." }
+  ];
+  const fallback = "I don't have an answer for that yet — try asking about projects, skills, experience, or achievements.";
 
-        // Scroll Progress
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
+  function matchAnswer(text){
+    const t = text.toLowerCase();
+    for(const item of qa){ if(item.k.some(k => t.includes(k))) return item.a; }
+    return fallback;
+  }
 
-        // Intersection Observer for Reveal Animations (Simulating Framer Motion)
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
+  const log = document.getElementById('aiLog');
+  const input = document.getElementById('aiInput');
+  const sendBtn = document.getElementById('aiSend');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        revealElements.forEach(el => revealObserver.observe(el));
+  function addUserMsg(text){
+    const div = document.createElement('div');
+    div.className = 'ai-msg user';
+    div.textContent = text;
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  }
 
-        // Typewriter Effect
-        const textToType = "I build intelligent systems that combine Large Language Models, Machine Learning, Data Science and Full Stack Engineering to solve real-world problems.";
-        const typeContainer = document.getElementById('typewriter-text');
-        let typeIndex = 0;
+  function addBotMsg(text){
+    const div = document.createElement('div');
+    div.className = 'ai-msg bot';
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
 
-        function typeWriter() {
-            if (typeIndex < textToType.length) {
-                typeContainer.innerHTML += textToType.charAt(typeIndex);
-                typeIndex++;
-                typeContainer.classList.add('typing-cursor');
-                setTimeout(typeWriter, 30);
-            } else {
-                setTimeout(() => {
-                    typeContainer.classList.remove('typing-cursor');
-                }, 2000);
-            }
-        }
-        
-        // Start typing after a short delay
-        setTimeout(typeWriter, 1000);
-        
-    </script>
-</body></html>
+    if(reduceMotion){
+      div.textContent = text;
+      return;
+    }
+
+    let i = 0;
+    div.innerHTML = '<span class="cursor"></span>';
+    const speed = 14;
+    const timer = setInterval(() => {
+      i++;
+      div.innerHTML = text.slice(0, i) + '<span class="cursor"></span>';
+      log.scrollTop = log.scrollHeight;
+      if(i >= text.length){ clearInterval(timer); div.innerHTML = text; }
+    }, speed);
+  }
+
+  function handleSend(customText){
+    const text = (customText || input.value).trim();
+    if(!text) return;
+    addUserMsg(text);
+    input.value = '';
+    sendBtn.disabled = true;
+    input.disabled = true;
+    setTimeout(() => {
+      addBotMsg(matchAnswer(text));
+      sendBtn.disabled = false;
+      input.disabled = false;
+      input.focus();
+    }, 380);
+  }
+
+  sendBtn.addEventListener('click', () => handleSend());
+  input.addEventListener('keydown', (e) => { if(e.key === 'Enter') handleSend(); });
+  document.querySelectorAll('.ai-chip').forEach(chip => {
+    chip.addEventListener('click', () => handleSend(chip.dataset.q));
+  });
+</script>
+
+</body>
+</html>
