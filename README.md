@@ -11,7 +11,6 @@ From LLM-powered applications and machine learning systems to AI-driven analytic
 # 👋 About Me
 
 Hi, I'm **Zaira Hussain**, a B.Tech Computer Science Engineering student and an **AI Engineer** passionate about building intelligent systems that combine **Generative AI, Machine Learning, and Full-Stack Development**.
-
 I enjoy transforming complex problems into scalable AI solutions by leveraging modern technologies such as **Python, OpenAI APIs, Anthropic APIs, React, FastAPI, and Machine Learning**. My focus is on developing production-ready AI applications that deliver meaningful user experiences and solve practical business challenges.
 
 My areas of interest include:
