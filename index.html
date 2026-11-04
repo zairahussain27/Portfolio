@@ -80,6 +80,12 @@ h1,h2,h3{letter-spacing:-.02em;font-weight:650}
 .ct{text-align:center;padding:64px 32px}.ct h2{font-size:clamp(30px,4.5vw,46px);margin-bottom:14px}.ct p{font-size:16px;color:var(--g600);margin-bottom:32px}
 .cl{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .pill{padding:13px 22px;border-radius:99px;background:var(--solid);border:1px solid var(--hl);font-size:14.5px;font-weight:500;transition:transform .2s}.pill:hover{transform:translateY(-2px)}
+.cf{max-width:520px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px;text-align:left}
+.cf input,.cf textarea{width:100%;padding:13px 18px;border-radius:18px;border:1px solid var(--g300);background:var(--solid);font:15px var(--font);color:var(--tx)}
+.cf textarea{min-height:130px;resize:vertical;line-height:1.5}
+.cf .btn{justify-content:center}.cf .btn:disabled{opacity:.6;cursor:wait;transform:none}
+.cf .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fs{font-size:13.5px;text-align:center;min-height:20px;color:var(--g600)}
 footer{text-align:center;padding:30px 24px 48px;font-size:12.5px;color:var(--g500);position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
@@ -197,6 +203,14 @@ footer{text-align:center;padding:30px 24px 48px;font-size:12.5px;color:var(--g50
 <a class="pill" href="https://github.com/zairahussain27" target="_blank" rel="noopener">GitHub</a>
 <a class="pill" href="https://leetcode.com/u/zairahussain27/" target="_blank" rel="noopener">LeetCode</a>
 <a class="pill" href="https://www.codechef.com/users/zairahussain" target="_blank" rel="noopener">CodeChef</a></div>
+<form class="cf" id="cf" novalidate>
+<input type="text" name="name" id="cfn" placeholder="Your name" aria-label="Your name" autocomplete="name" required maxlength="80">
+<input type="email" name="email" id="cfe" placeholder="Your email address" aria-label="Your email address" autocomplete="email" required maxlength="120">
+<textarea name="message" id="cfm" placeholder="Write your message…" aria-label="Your message" required maxlength="3000"></textarea>
+<input class="hp" type="text" name="_honey" id="cfh" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn bp" id="cfb" type="submit">Send message ➤</button>
+<p class="fs" id="cfs" role="status" aria-live="polite"></p>
+</form>
 </div></div></section>
 </main>
 <footer>© 2026 Zaira Hussain · Indore, India</footer>
@@ -231,6 +245,24 @@ const h=QA.find(i=>i.k.some(k=>l.includes(k)));setTimeout(()=>add(h?h.a:FB,'b'),
 ['Projects','Experience','Skills','Open source','Coding','Contact'].forEach(l=>{const b=document.createElement('button');b.textContent=l;b.onclick=()=>ask(l);document.getElementById('qc').appendChild(b)});
 document.getElementById('send').onclick=()=>ask(inp.value);
 inp.addEventListener('keydown',e=>{if(e.key==='Enter')ask(inp.value)});
+
+/* Contact form: delivers visitor messages straight to your inbox via FormSubmit */
+const cf=document.getElementById('cf'),cfs=document.getElementById('cfs'),cfb=document.getElementById('cfb');
+cf.addEventListener('submit',async e=>{
+e.preventDefault();
+const name=cf.cfn.value.trim(),email=cf.cfe.value.trim(),message=cf.cfm.value.trim();
+if(document.getElementById('cfh').value)return;
+if(!name||!message){cfs.textContent='Please add your name and a message.';return}
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){cfs.textContent='Please enter a valid email address.';return}
+cfb.disabled=true;cfs.textContent='Sending…';
+try{
+const r=await fetch('https://formsubmit.co/ajax/zairahussain27@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+body:JSON.stringify({name,email,message,_subject:'New portfolio message from '+name,_template:'table',_captcha:'false'})});
+const d=await r.json().catch(()=>({}));
+if(r.ok&&(d.success===true||d.success==='true')){cfs.textContent='Thanks! Your message has been sent.';cf.reset()}
+else throw new Error(d.message||'failed');
+}catch(err){cfs.textContent='Could not send. Please email zairahussain27@gmail.com directly.'}
+cfb.disabled=false});
 </script>
 </body>
 </html>
